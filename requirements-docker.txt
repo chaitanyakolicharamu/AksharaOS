@@ -1,0 +1,13 @@
+pyyaml
+pydantic
+loguru
+pytest
+black
+ruff
+pdf2image
+pytesseract
+pillow
+chromadb
+sentence-transformers
+fastapi
+uvicorn
