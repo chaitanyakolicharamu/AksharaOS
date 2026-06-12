@@ -1,0 +1,18 @@
+[project]
+name = "aksharaos"
+version = "0.1.0"
+description = "Open-source language knowledge platform for Telugu and Indic language resources"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = [
+    "analysis",
+    "ingestion",
+    "ingestion.processors",
+    "rag",
+    "utils"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
