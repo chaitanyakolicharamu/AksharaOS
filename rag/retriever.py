@@ -1,5 +1,6 @@
-import chromadb
 from sentence_transformers import SentenceTransformer
+
+from rag.vector_store import VectorStore
 
 VECTOR_DB_DIR = "data/curated/vector_store"
 COLLECTION_NAME = "bangaru_palukulu_knowledge"
@@ -9,9 +10,10 @@ EMBEDDING_MODEL = "BAAI/bge-m3"
 class Retriever:
     def __init__(self):
         self.model = SentenceTransformer(EMBEDDING_MODEL)
-
-        client = chromadb.PersistentClient(path=VECTOR_DB_DIR)
-        self.collection = client.get_collection(name=COLLECTION_NAME)
+        self.vector_store = VectorStore(
+            path=VECTOR_DB_DIR,
+            collection_name=COLLECTION_NAME,
+        )
 
     def detect_mode(self, query: str) -> str:
         pure_telugu_terms = ["అచ్చ", "అచ్చతెలుగు", "తెలుగు మాట", "సాటి మాట"]
@@ -26,10 +28,7 @@ class Retriever:
         return "synonym"
 
     def exact_search(self, query: str, top_k: int = 5):
-        return self.collection.get(
-            where_document={"$contains": query},
-            limit=top_k,
-        )
+        return self.vector_store.exact_search(query=query, top_k=top_k)
 
     def vector_search(self, query: str, top_k: int = 20):
         query_embedding = self.model.encode(
@@ -37,9 +36,9 @@ class Retriever:
             normalize_embeddings=True,
         ).tolist()
 
-        return self.collection.query(
+        return self.vector_store.vector_search(
             query_embeddings=query_embedding,
-            n_results=top_k,
+            top_k=top_k,
         )
 
     def rerank(
@@ -56,7 +55,6 @@ class Retriever:
             zip(documents, metadatas, ids), start=1
         ):
             score = 0.0
-
             score += 1.0 / rank
 
             if query in doc:
