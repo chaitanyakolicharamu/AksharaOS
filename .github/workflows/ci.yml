@@ -35,3 +35,5 @@ jobs:
 
       - name: Run Tests
         run: pytest
+      - name: Build Docker Image
+        run: docker build -t aksharaos .
