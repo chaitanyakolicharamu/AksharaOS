@@ -1,0 +1,5 @@
+2026-06-12 09:02:25.235 | INFO     | __main__:run_document:25 - Starting pipeline for document: bangaru_nanelu
+2026-06-12 09:02:25.236 | INFO     | __main__:run_document:26 - PDF: data\raw\dictionaries\bangaru_nanelu.pdf
+2026-06-12 09:02:25.236 | INFO     | __main__:run_document:27 - Pages: 1 to 10
+2026-06-12 09:02:25.237 | INFO     | __main__:run_document:28 - Chunk strategy: default
+2026-06-12 09:02:25.237 | INFO     | __main__:run_document:29 - [DONE] Pipeline completed for: bangaru_nanelu

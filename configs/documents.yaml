@@ -1,0 +1,26 @@
+global:
+  poppler_path: "C:/Users/venka/Downloads/Release-26.02.0-0/poppler-26.02.0/Library/bin"
+  tesseract_path: "C:/Program Files/Tesseract-OCR/tesseract.exe"
+
+documents:
+
+  bangaru_nanelu:
+    pdf: "bangaru_nanelu.pdf"
+    source_type: "dictionary_pdf"
+    source_role: "pure_telugu_reference"
+    chunk_strategy: "default"
+    ocr_lang: "tel"
+
+  telugu_paryaya_nighantuvu:
+    pdf: "telugu_paryaya.pdf"
+    source_type: "dictionary_pdf"
+    source_role: "synonym_dictionary"
+    chunk_strategy: "synonym"
+    ocr_lang: "tel"
+
+  telugu_english_dictionary:
+    pdf: "telugu_english_dictionary.pdf"
+    source_type: "dictionary_pdf"
+    source_role: "meaning_dictionary"
+    chunk_strategy: "dictionary"
+    ocr_lang: "tel"

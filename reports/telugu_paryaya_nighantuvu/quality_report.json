@@ -1,0 +1,133 @@
+{
+  "document_id": "telugu_paryaya_nighantuvu",
+  "input_file": "data\\processed\\telugu_paryaya_nighantuvu\\chunks\\chunks.jsonl",
+  "output_file": "data\\curated\\telugu_paryaya_nighantuvu\\quality_chunks.jsonl",
+  "total_chunks": 2457,
+  "kept": 1590,
+  "removed": 867,
+  "removed_reasons": {
+    "too_short": 857,
+    "too_few_telugu_words": 9,
+    "index_chunk": 1
+  },
+  "average_quality_score": 0.958,
+  "sample_kept": [
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_013_entry_001",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_013_entry_001",
+      "language": "te",
+      "text": "28. వృష్త్ర్రం, వివిధరకాలైన వస్త్రాలు, చెప్పులు 3338-3395 29. ఆభరణాలు 3396-3448 30. అలంకరణం, అలంకరణ వస్తువులు రఉఉ9-3483 ర్న సుగంధద్రవ్యాలు, సువాసనాదుర్వాసనలు 3484-3508 32. భాష-ధ్వని, కూత, ఉచ్చారణ ... 3509-3591 33. విద్య-చదువు, పాఠశాల, గురువు ... 3592-3624 34. సంఖ్యావాచకాలు 3625-3700 35. శాస్త్రాలు-వేదం, ఇతిపోసం . 3701-3787 36. లలితకళలు-సాహిత్యం, సంగీతం, నాట్యం - 3788-3893 37. క్రీడలు-ఆట, వందెం. 3894-3934 38. ఆచారము-నాగరికత, పెండ్లి, పుట్టుక, చావు 3935-4091 39. పురాణవ్యక్తులు-బుషులు, రామాయణ, భారతపాత్రలు 4092-4172",
+      "quality_score": 0.715
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_013_entry_002",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_013_entry_002",
+      "language": "te",
+      "text": "40. దేవతలు-స్వర్గం, దిక్పొలురు, వివిధ దేవజాతులు, నరకం 4173-4336 ( వద సూచికలు పేజి : 211-541 11౪",
+      "quality_score": 0.753
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_014_entry_001",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_014_entry_001",
+      "language": "te",
+      "text": "1. ఖగోళం, ఆకాశం, 1. (బ్రహ్మాండము: అంభోజసంభవాండము, అజాండము, కంజభవాండము, కంజాతభవనాం డము, కమలజాండము, (ద్రుహణాండము, నల్వగ్రుడ్డు, పంకజభవాండము, పంకజాత భవాండమ్ము పద్మజాతాండము, బొమ్మగ్రుడ్దు, వేధోండము, హిరణ్మయాండము.",
+      "quality_score": 0.988
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_014_entry_002",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_014_entry_002",
+      "language": "te",
+      "text": "3. భూగోళము: జగదండము, భువన కోశ(ష)ము. భువన గోళము, శ్రీచక్రము. కడ. ఆకాశము: అంతరిక్షము, అంబరము, అంబుదాయనము, అంభోభృత్పథము, అక్ష రము, అధ్యము, అనంగము, అనంజనము, అనంతము, అనంశము, అభ్రవపథము, అ(భ్రము, ఆంతరిక్షము, ఆకసము, ఆృష్ట్రము, ఉడుగణ వీథి, ఉదువథము, ఉప్పరము, ఊర్ధ్యవర్త ము, కలీ నేల్చుహజ్జ, కింజల్కము, ఖంబు, ఖజాకము, ఖతలము, ఖము, గగనము, గాడుపుతండ్రి, ఘనాశ్రయము, చండభ మార్గము, చదలు, చరాచరము, చుక్కలతెరువు, చుక్కల త్రోవ, జేజేవీథి, తారాధ్యము, తారాపథము, తారా వర్త ము, తెఅగంటి త్రోవ, దివము, దివి, దివ్యము, చేవవర్త్మము, ద్యువు, ద్యో గ్రాము, ధత్రము, ధృత్వము, (ధ్రుమము, నక్ష్మత్రపథము, నక్షత్రమార్గము, నభము, నభ సము, నభస్సు, నాకము, నింగి, నిరాకారము, నిర్మోకము, నీరూపము, పుణ్యము, పుష్క రము, బయలు, బర్షిస్సు, బహళము, బైలు, భగము, భువనము, భువస్సు, గ్ర్యాష్ట్రము, మబ్బు త్రోవ, మిను(న్ను), మిన్నులు, మేఘ ద్వారము, మేఘపవథమను, మేఘమార్గము, మేఘవర్త ము, మేఘవేశ్కము, మొగిలు త్రోవ, మొగి(గు)లుదారి, రిక్కదారి, రోదసి, రోదోం తరము, వాయునర్త ము, వాయ్వాస్పదము, విన్ను(ను), విభువు, వియత్తలము, వియత్తు, విష్ణుసదము, విహాయసము, వెన్నునడుగు, చేలుపుతెరువు, వేలుపుత్రోవ, న్యోమము, శబ్దగుణము, శుషిరము, శూన్యము, సంపూ క్లము, సతృథము, సన్మార్గము, సర్మము, సర్వతోముఖము, సౌవిశత్రివర్త శ్మము, సుమము, సురవర్త ము, సూమము, సైరిభము, సోమ ధార, స్త్రీర్వి, స్పర్శము, పారితాలి, హరిపదము. 5, ఆకాశవాణి: అంబరవాణి, అశరీరచాణి, అశరీరిణి, ఆకాశభాషితము, ఆకాశవాగ్లేది, గగనభారతి, గగనవాణి, చిత్రోక్షి, దివ్యవాణి, దైవప్రశ్నము, దైనవాణి, నభోగీర్జల జాయతార్షి పుష్పశకటి. (. సూర్యుడు: అంజిప్ఫుడు(వు), అంబ రమణి, అంబర రత్నము, అంబరీషుడు, అంబుజాప్పుడు, అంబుతస్కరుడు, అంశుడు, అంశుధరుడు, అంశుపతి, అంశుభృత్తు, అంశు మంతుడు, అంశుమాలి, అంశుహస్తుడు, అకూ పారుడు, అజంభుడు, అద్రి, అబ్బబొంధవుడు, అధ్య్వగుడు, అధ్వపతి, అబ్బహితుడు, అయుగ్మ వాదాడు, అయుగ్మ(గ)సప్తి, అరుణకిరణుడు, అరుణగలస్తి, అరుణసారథి, అరుణుడు, అరూ పుడు, అర్ముడు, అర్చిష్మంతుడు, అర్యముడు, అనర్రతుడు, అవి, అవ్యథిషుడు, అశీతకిర ణుడు, అిశాయుడి గు అహఃవతి, అహ ర్నాథుడు, అహార్పతి, అహార్బాంధవుడు, అహ ర్మణి, అహస్కరుడు, అహిమాంశుడు(వు), ఆచార్య జి.ఎన్ , రెడ్డి తెలుగు వర్యాయవద నిధుంటుతు",
+      "quality_score": 0.999
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_016_entry_001",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_016_entry_001",
+      "language": "te",
+      "text": "7. సూర్యమండలముః: అరుణగభస్తిబిం బము, తారానాయకమండలము, పతంగబచిం బము, బ్రధ్నబింబము, రవిబింబము. రి. సూర్యునిభార్యలు: సంజ్ఞ: అశ్విని, కొళిం దీసువు, త్రసరేణువు, త్వాస్ట్రి, దస్రసువు, ద్యుమయి, మహావీర్య, యమసువు, యోగ్య, సువర్చల, సూర్య, స్వరేణువు, స్వాతి; ఛాయః ఛాయ, తపవతీజనని, భూమయి, మందజనని, వరి.",
+      "quality_score": 0.996
+    }
+  ],
+  "sample_removed": [
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_003_entry_001",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_003_entry_001",
+      "language": "te",
+      "text": "29. ఫోన్ : 597831 ఆక్షరకూర్చు: ట్రంటీఫస్ట్ సెంచరీ, ఫోన్ : 4066086",
+      "quality_score": 0.706,
+      "removed_reason": "too_short"
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_016_entry_006",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_016_entry_006",
+      "language": "te",
+      "text": "18. ఎండబెట్టు(స.క్రి.): ఆరబెఓ ఈటార్చు, శుష్కింపచేయు.",
+      "quality_score": 0.95,
+      "removed_reason": "too_short"
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_017_entry_003",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_017_entry_003",
+      "language": "te",
+      "text": "27. ముత్యపుకాంతిః చౌలు, లావణ్యము, సుపాణి.",
+      "quality_score": 0.939,
+      "removed_reason": "too_short"
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_018_entry_002",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_018_entry_002",
+      "language": "te",
+      "text": "42. సూర్యోదయము: ఉదయము, ఉదితి పొడుపు, ప్రొద్దుపొడుపు.",
+      "quality_score": 0.952,
+      "removed_reason": "too_short"
+    },
+    {
+      "document_id": "telugu_paryaya_nighantuvu",
+      "source_type": "pdf",
+      "source_role": "synonym_dictionary",
+      "unit_type": "synonym_entry",
+      "unit_id": "page_019_entry_005",
+      "chunk_id": "telugu_paryaya_nighantuvu_page_019_entry_005",
+      "language": "te",
+      "text": "64. నక్ష్మత్రమండలము: ఉడుమండలము, జ్యోతిశ్చక్రము, భచక్రము.",
+      "quality_score": 0.957,
+      "removed_reason": "too_short"
+    }
+  ]
+}
