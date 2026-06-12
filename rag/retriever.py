@@ -1,5 +1,6 @@
 from sentence_transformers import SentenceTransformer
-
+from rag.reranker import Reranker
+from rag.query_router import QueryRouter
 from rag.vector_store import VectorStore
 
 VECTOR_DB_DIR = "data/curated/vector_store"
@@ -10,6 +11,8 @@ EMBEDDING_MODEL = "BAAI/bge-m3"
 class Retriever:
     def __init__(self):
         self.model = SentenceTransformer(EMBEDDING_MODEL)
+        self.reranker = Reranker()
+        self.query_router = QueryRouter()
         self.vector_store = VectorStore(
             path=VECTOR_DB_DIR,
             collection_name=COLLECTION_NAME,
@@ -101,7 +104,7 @@ class Retriever:
         return ranked
 
     def retrieve(self, query: str, top_k: int = 5):
-        mode = self.detect_mode(query)
+        mode = self.query_router.detect_mode(query)
 
         exact_results = self.exact_search(query, top_k=5)
         vector_results = self.vector_search(query, top_k=20)
@@ -125,7 +128,7 @@ class Retriever:
                 metadatas.append(meta)
                 ids.append(chunk_id)
 
-        ranked = self.rerank(
+        ranked = self.reranker.rerank(
             query=query,
             documents=documents,
             metadatas=metadatas,
