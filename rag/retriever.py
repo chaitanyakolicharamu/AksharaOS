@@ -13,6 +13,18 @@ class Retriever:
         client = chromadb.PersistentClient(path=VECTOR_DB_DIR)
         self.collection = client.get_collection(name=COLLECTION_NAME)
 
+    def detect_mode(self, query: str) -> str:
+        pure_telugu_terms = ["అచ్చ", "అచ్చతెలుగు", "తెలుగు మాట", "సాటి మాట"]
+        name_terms = ["పేర్లు", "పేరు", "అమ్మాయిల", "అబ్బాయిల"]
+
+        if any(term in query for term in pure_telugu_terms):
+            return "pure_telugu"
+
+        if any(term in query for term in name_terms):
+            return "name"
+
+        return "synonym"
+
     def exact_search(self, query: str, top_k: int = 5):
         return self.collection.get(
             where_document={"$contains": query},
@@ -36,6 +48,7 @@ class Retriever:
         documents: list[str],
         metadatas: list[dict],
         ids: list[str],
+        mode: str,
     ):
         ranked = []
 
@@ -44,18 +57,36 @@ class Retriever:
         ):
             score = 0.0
 
-            # Earlier vector rank is better
             score += 1.0 / rank
 
-            # Strong boost when exact query appears in chunk
             if query in doc:
                 score += 0.50
 
-            # Synonym dictionary is usually better for word lookup
-            if meta.get("source_role") == "synonym_dictionary":
-                score += 0.15
+            source_role = meta.get("source_role")
 
-            # OCR / text quality boost
+            if mode == "synonym" and source_role == "synonym_dictionary":
+                score += 0.25
+
+            if mode == "pure_telugu" and source_role == "pure_telugu_reference":
+                score += 0.25
+
+            if mode == "name":
+                name_terms = [
+                    "అమ్మాయి",
+                    "బాలిక",
+                    "యువతి",
+                    "కన్య",
+                    "చెలువ",
+                    "సోయగి",
+                    "ముద్దుగుమ్మ",
+                    "చక్కనమ్మ",
+                    "తామరకంటి",
+                    "పువ్వుబోడి",
+                ]
+
+                if any(term in doc for term in name_terms):
+                    score += 0.40
+
             quality_score = meta.get("quality_score") or 0
             score += float(quality_score) * 0.05
 
@@ -72,6 +103,8 @@ class Retriever:
         return ranked
 
     def retrieve(self, query: str, top_k: int = 5):
+        mode = self.detect_mode(query)
+
         exact_results = self.exact_search(query, top_k=5)
         vector_results = self.vector_search(query, top_k=20)
 
@@ -79,13 +112,11 @@ class Retriever:
         metadatas = []
         ids = []
 
-        # Add exact matches first
         for i, doc in enumerate(exact_results.get("documents", [])):
             documents.append(doc)
             metadatas.append(exact_results["metadatas"][i])
             ids.append(exact_results["ids"][i])
 
-        # Add vector matches
         vector_docs = vector_results["documents"][0]
         vector_metas = vector_results["metadatas"][0]
         vector_ids = vector_results["ids"][0]
@@ -101,11 +132,13 @@ class Retriever:
             documents=documents,
             metadatas=metadatas,
             ids=ids,
+            mode=mode,
         )
 
         top_results = ranked[:top_k]
 
         return {
+            "mode": mode,
             "documents": [[item["document"] for item in top_results]],
             "metadatas": [[item["metadata"] for item in top_results]],
             "ids": [[item["id"] for item in top_results]],
