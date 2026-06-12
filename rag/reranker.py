@@ -13,20 +13,28 @@ class Reranker:
             zip(documents, metadatas, ids), start=1
         ):
             score = 0.0
-            score += 1.0 / rank
 
-            if query in doc:
-                score += 0.50
+            # Base vector rank score
+            score += 1.0 / rank
 
             source_role = meta.get("source_role")
 
-            if mode == "synonym" and source_role == "synonym_dictionary":
-                score += 0.25
+            # Mode-specific source priority
+            if mode == "synonym":
+                if source_role == "synonym_dictionary":
+                    score += 1.00
 
-            if mode == "pure_telugu" and source_role == "pure_telugu_reference":
-                score += 0.25
+                if query in doc and source_role == "synonym_dictionary":
+                    score += 0.50
 
-            if mode == "name":
+            elif mode == "pure_telugu":
+                if source_role == "pure_telugu_reference":
+                    score += 1.00
+
+                if query in doc:
+                    score += 0.50
+
+            elif mode == "name":
                 name_terms = [
                     "అమ్మాయి",
                     "బాలిక",
@@ -41,8 +49,19 @@ class Reranker:
                 ]
 
                 if any(term in doc for term in name_terms):
-                    score += 0.40
+                    score += 0.75
 
+                if source_role == "pure_telugu_reference":
+                    score += 0.20
+
+                if source_role == "synonym_dictionary":
+                    score += 0.20
+
+            else:
+                if query in doc:
+                    score += 0.50
+
+            # Quality boost
             quality_score = meta.get("quality_score") or 0
             score += float(quality_score) * 0.05
 
