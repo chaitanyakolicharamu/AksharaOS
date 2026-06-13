@@ -1,37 +1,39 @@
-import ollama
+import requests
 
 
 class Generator:
-
-    def __init__(self, model_name="qwen2.5:7b-instruct"):
+    def __init__(self, model_name: str = "qwen2.5:3b"):
         self.model_name = model_name
+        self.base_url = "http://localhost:11434/api/generate"
 
-    def generate(self, question: str, context: str):
+    def build_prompt(self, query: str, context: str) -> str:
+        return f"""
+You are AksharaOS, a Telugu language knowledge assistant.
 
-        prompt = f"""
-You are Bangaru Palukulu AI.
+Answer the user using ONLY the provided context.
+If the answer is not in the context, say that the available sources do not contain enough information.
 
-Task:
-Answer the user's question using ONLY the given context.
+User question:
+{query}
 
-Rules:
-1. Do not repeat the same idea.
-2. Do not invent information.
-3. If OCR text is unclear, simplify it.
-4. Answer in natural Telugu.
-5. Maximum 5 bullet points.
-
-CONTEXT:
+Context:
 {context}
 
-QUESTION:
-{question}
-
-ANSWER:
+Answer in clear Telugu. If useful, include short bullet points.
 """
 
-        response = ollama.chat(
-            model=self.model_name, messages=[{"role": "user", "content": prompt}]
+    def generate(self, query: str, context: str) -> str:
+        prompt = self.build_prompt(query=query, context=context)
+
+        response = requests.post(
+            self.base_url,
+            json={
+                "model": self.model_name,
+                "prompt": prompt,
+                "stream": False,
+            },
+            timeout=120,
         )
 
-        return response["message"]["content"]
+        response.raise_for_status()
+        return response.json()["response"].strip()

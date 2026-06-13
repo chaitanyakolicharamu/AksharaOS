@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from rag.context_builder import ContextBuilder
+from rag.context_compressor import ContextCompressor
+from rag.generator import Generator
 from rag.retriever import Retriever
 
 app = FastAPI(
@@ -11,6 +13,8 @@ app = FastAPI(
 
 retriever = Retriever()
 context_builder = ContextBuilder()
+compressor = ContextCompressor()
+generator = Generator()
 
 
 class SearchRequest(BaseModel):
@@ -67,16 +71,24 @@ def ask(request: AskRequest):
 
     context = context_builder.build(results)
 
-    answer = (
-        "Retrieved relevant Telugu knowledge. "
-        "LLM generation will be added in the next phase."
+    compressed_context = compressor.compress(
+        query=request.query,
+        context=context,
     )
+
+    if results["mode"] == "synonym":
+        answer = compressed_context
+    else:
+        answer = generator.generate(
+            query=request.query,
+            context=compressed_context,
+        )
 
     return {
         "query": request.query,
         "mode": results["mode"],
         "answer": answer,
-        "context_preview": context[:1000],
+        "context_preview": compressed_context,
         "sources": [
             {
                 "chunk_id": chunk_id,
