@@ -1,0 +1,68 @@
+# Code and datasets have separate licenses. Preserve each record's attribution.
+sources:
+  - id: te_wiktionary
+    title: Telugu Wiktionary
+    adapter: wiktionary_te
+    url: https://te.wiktionary.org/w/api.php
+    category: వర్గం:తెలుగు పదాలు
+    license: CC-BY-SA-4.0
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/
+    attribution: Telugu Wiktionary contributors; authors in linked revision history
+    enabled: true
+    reuse_approved: true
+    notes: Definitions and English translation lines only; no song quotations or usage examples.
+  - id: en_wiktionary_te
+    title: English Wiktionary — Telugu entries
+    adapter: wiktionary_en
+    url: https://en.wiktionary.org/w/api.php
+    category: Category:Telugu lemmas
+    license: CC-BY-SA-4.0
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/
+    attribution: English Wiktionary contributors; authors in linked revision history
+    enabled: true
+    reuse_approved: true
+    notes: Only the Telugu language section; conservative definition-template handling.
+  - id: wikidata_te
+    title: Wikidata Telugu lexemes
+    adapter: wikidata
+    url: https://www.wikidata.org/w/api.php
+    license: CC0-1.0
+    license_url: https://www.wikidata.org/wiki/Wikidata:Licensing
+    attribution: Wikidata contributors
+    enabled: true
+    reuse_approved: true
+    notes: Q8097 language only; senses with Telugu or English glosses; not a name list.
+  - id: brown_1853
+    title: C. P. Brown — A Dictionary English and Telugu (1853)
+    adapter: local
+    url: https://commons.wikimedia.org/wiki/File:A_Dictionary_English_and_Telugu_(1853)_(IA_dli.ernet.15675).pdf
+    license: Public-Domain
+    license_url: https://commons.wikimedia.org/wiki/File:A_Dictionary_English_and_Telugu_(1853)_(IA_dli.ernet.15675).pdf
+    attribution: C. P. Brown, A Dictionary English and Telugu, 1853; scan via Wikimedia Commons / Internet Archive
+    enabled: true
+    reuse_approved: true
+    notes: Import page-referenced extracts from this exact edition. No assumptions about other PDFs or modern editions.
+  - id: te_wikisource_selected
+    title: Telugu Wikisource — selected literary extracts
+    adapter: local
+    url: https://te.wikisource.org/
+    license: REVIEW-REQUIRED
+    license_url: https://te.wikisource.org/wiki/Wikisource:Copyrights
+    attribution: Requires work, author, edition, and page attribution
+    notes: Register one approved source per selected work with its actual reuse terms before importing.
+  - id: andhra_bharati
+    title: Andhra Bharati dictionaries
+    adapter: local
+    url: https://andhrabharati.com/dictionary/
+    license: PERMISSION-REQUIRED
+    license_url: https://andhrabharati.com/dictionary/
+    attribution: Requires dictionary-level attribution and permission
+    notes: Cross-check manually; bulk ingestion disabled pending permission.
+  - id: community_reviewed
+    title: Consented community lexical contributions
+    adapter: local
+    url: https://github.com/chaitanyakolicharamu/AksharaOS
+    license: CONSENT-REQUIRED
+    license_url: https://github.com/chaitanyakolicharamu/AksharaOS
+    attribution: Requires contributor permission and reviewer signoff
+    notes: Future original lexical submissions; likes/dislikes are stored separately and never change dictionary meanings.

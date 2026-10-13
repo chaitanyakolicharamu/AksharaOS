@@ -1,0 +1,10 @@
+pyyaml>=6,<7
+pydantic>=2.9,<3
+loguru>=0.7,<1
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+requests>=2.32,<3
+mwparserfromhell>=0.7,<0.8
+numpy>=1.26,<3
+scipy>=1.11,<2
+scikit-learn>=1.5,<2

@@ -1,0 +1,20 @@
+[
+  {"query":"moonlight","expected_titles":["వెన్నెల","చంద్రిక","జ్యోత్స్న"]},
+  {"query":"wealth","expected_titles":["సిరి"]},
+  {"query":"friendship","expected_titles":["చెలిమి","స్నేహము"]},
+  {"query":"flower","expected_titles":["పువ్వు","పుష్పము","సుమము","విరి"]},
+  {"query":"light","expected_titles":["వెలుగు","జ్యోతి","కాంతి"]},
+  {"query":"sky","expected_titles":["ఆకాశము","ఆకాశం","నింగి"]},
+  {"query":"rain","expected_titles":["వాన","వర్షము"]},
+  {"query":"honey","expected_titles":["తేనె","మధు"]},
+  {"query":"compassion","expected_titles":["దయ","కరుణ"]},
+  {"query":"peace","expected_titles":["శాంతి"]},
+  {"query":"music","expected_titles":["సంగీతం","సంగీతము","రాగము","లయ"]},
+  {"query":"hope","expected_titles":["ఆశ"]},
+  {"query":"వెన్నెల","expected_titles":["వెన్నెల"]},
+  {"query":"సిరి","expected_titles":["సిరి"]},
+  {"query":"చెలిమి","expected_titles":["చెలిమి"]},
+  {"query":"పువ్వు","expected_titles":["పువ్వు"]},
+  {"query":"తెలుగు","expected_titles":["తెలుగు"]},
+  {"query":"పసికందు","expected_titles":["పసికందు"]}
+]

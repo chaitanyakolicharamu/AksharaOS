@@ -1,13 +1,6 @@
-pyyaml
-pydantic
-loguru
-pytest
-black
-ruff
+-r requirements-core.txt
+chromadb
+sentence-transformers
 pdf2image
 pytesseract
 pillow
-chromadb
-sentence-transformers
-fastapi
-uvicorn

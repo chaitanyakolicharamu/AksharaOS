@@ -1,0 +1,18 @@
+{
+  "version": "21687861b415a178c114",
+  "corpus_sha256": "2e3f36ec3da379c305e7eed4dfb67cd8bc3d54bfdc95c6e93e8cb0c537b9d7ae",
+  "records": 825,
+  "source_evidence_counts": {
+    "en_wiktionary_te": 458,
+    "te_wiktionary": 283,
+    "wikidata_te": 84
+  },
+  "unique_titles": 716,
+  "training": "TF-IDF retrieval fitted on source text; no LLM or name-preference training",
+  "schema_version": 2,
+  "retrieval_weights": {
+    "word": 0.75,
+    "character": 0.25
+  },
+  "quality_rejected": 0
+}

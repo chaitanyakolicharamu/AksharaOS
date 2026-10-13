@@ -1,0 +1,245 @@
+{
+  "knowledge_version": "21687861b415a178c114",
+  "records": 825,
+  "queries": 18,
+  "hit_at_1": 16,
+  "hit_at_5": 17,
+  "mrr": 0.9166666666666666,
+  "scope": "Development smoke queries used during implementation; not held-out evaluation or human name-quality ratings.",
+  "details": [
+    {
+      "query": "moonlight",
+      "expected_titles": [
+        "వెన్నెల",
+        "చంద్రిక",
+        "జ్యోత్స్న"
+      ],
+      "retrieved_titles": [
+        "వెన్నెల",
+        "జ్యోత్స్న",
+        "చంద్రిక",
+        "వెన్నెల",
+        "చంద్రిక"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "wealth",
+      "expected_titles": [
+        "సిరి"
+      ],
+      "retrieved_titles": [
+        "సిరి",
+        "సిరి"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "friendship",
+      "expected_titles": [
+        "చెలిమి",
+        "స్నేహము"
+      ],
+      "retrieved_titles": [
+        "చెలిమి",
+        "స్నేహము",
+        "స్నేహము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "flower",
+      "expected_titles": [
+        "పువ్వు",
+        "పుష్పము",
+        "సుమము",
+        "విరి"
+      ],
+      "retrieved_titles": [
+        "సుమము",
+        "విరి",
+        "సుమము",
+        "పుష్పము",
+        "పుష్పము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "light",
+      "expected_titles": [
+        "వెలుగు",
+        "జ్యోతి",
+        "కాంతి"
+      ],
+      "retrieved_titles": [
+        "జ్యోతి",
+        "వెలుగు",
+        "దీప్తి",
+        "కాంతి",
+        "కిరణము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "sky",
+      "expected_titles": [
+        "ఆకాశము",
+        "ఆకాశం",
+        "నింగి"
+      ],
+      "retrieved_titles": [
+        "గగనము",
+        "ఆకాశము",
+        "నింగి",
+        "నింగి",
+        "తూర్పు"
+      ],
+      "first_relevant_rank": 2
+    },
+    {
+      "query": "rain",
+      "expected_titles": [
+        "వాన",
+        "వర్షము"
+      ],
+      "retrieved_titles": [
+        "వాన",
+        "వర్షము",
+        "వర్షము",
+        "వాన"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "honey",
+      "expected_titles": [
+        "తేనె",
+        "మధు"
+      ],
+      "retrieved_titles": [
+        "తేనె",
+        "మధు"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "compassion",
+      "expected_titles": [
+        "దయ",
+        "కరుణ"
+      ],
+      "retrieved_titles": [
+        "దయ"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "peace",
+      "expected_titles": [
+        "శాంతి"
+      ],
+      "retrieved_titles": [
+        "శాంతి"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "music",
+      "expected_titles": [
+        "సంగీతం",
+        "సంగీతము",
+        "రాగము",
+        "లయ"
+      ],
+      "retrieved_titles": [
+        "లయ",
+        "వసంతము",
+        "రాగము",
+        "సాహిత్యము",
+        "స్వరము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "hope",
+      "expected_titles": [
+        "ఆశ"
+      ],
+      "retrieved_titles": [
+        "ఆశ"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "వెన్నెల",
+      "expected_titles": [
+        "వెన్నెల"
+      ],
+      "retrieved_titles": [
+        "వెన్నెల",
+        "వెన్నెల",
+        "జ్యోత్స్న",
+        "చంద్రిక"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "సిరి",
+      "expected_titles": [
+        "సిరి"
+      ],
+      "retrieved_titles": [
+        "సిరి",
+        "సిరి"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "చెలిమి",
+      "expected_titles": [
+        "చెలిమి"
+      ],
+      "retrieved_titles": [
+        "చెలిమి",
+        "చెలిమి",
+        "స్నేహము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "పువ్వు",
+      "expected_titles": [
+        "పువ్వు"
+      ],
+      "retrieved_titles": [
+        "పువ్వు",
+        "కలువ",
+        "పుష్పము",
+        "విరి"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "తెలుగు",
+      "expected_titles": [
+        "తెలుగు"
+      ],
+      "retrieved_titles": [
+        "తెలుగు",
+        "అంకగత్తె",
+        "అంగటి",
+        "అంకకరము",
+        "సాహిత్యము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "పసికందు",
+      "expected_titles": [
+        "పసికందు"
+      ],
+      "retrieved_titles": [],
+      "first_relevant_rank": null
+    }
+  ]
+}
