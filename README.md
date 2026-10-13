@@ -27,12 +27,19 @@ Use `/search` for source evidence, `/ask` for the existing answer flow, `/names`
 reviewed suggestions, and `/feedback` for preferences. `/health` checks process
 liveness; `/ready` reports data versions and the internal-testing stage.
 
-The reviewed name catalog still requires Telugu human review. Until then, `/names`
-returns `no_reviewed_matches`. Retrieval fitting is complete; no LLM fine-tuning
-or real-feedback preference training has been performed.
+The first internal catalog contains **three owner-confirmed girl names**:
+Vennela (moonlight), Tara (star), and Deepthi (radiance/brightness). Vennela is
+classified as Telugu-origin; Tara and Deepthi are Sanskrit-origin and are excluded
+by the pure-Telugu filter. Five other proposals remain pending.
+
+Name retrieval searches the confirmed spellings and meanings as well as the
+dictionary evidence. Unsupported topics return `no_reviewed_matches`.
+Retrieval fitting is complete; no LLM fine-tuning or real-feedback preference
+training has been performed. This three-name pilot is not a public launch.
 
 [First name-review batch: eight candidates and source checks](reports/name_review/README.md)
 · [Record review decisions and test a candidate catalog](docs/name-review.md)
+· [Current pilot status](reports/name_review/pilot_activation.json)
 
 [Full workflow: sources, knowledge builds, name review, training, and rollout](docs/knowledge-and-feedback.md)
 

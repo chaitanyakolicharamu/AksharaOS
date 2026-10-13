@@ -1,0 +1,230 @@
+{
+  "checked_at": "2026-10-13T13:46:25.033407+00:00",
+  "review_date": "2026-10-13",
+  "approval_basis": "Project owner confirmed the displayed three-name table for internal testing; not independent expert certification.",
+  "review_batch": "39383a2b59500143c3f3",
+  "knowledge_version": "21687861b415a178c114",
+  "catalog_version": "32d15b32aa0fdef5dfd1",
+  "scoring_schema": "reviewed-meanings-v2",
+  "ranker_version": "baseline-v2",
+  "catalog_path": "data/names/reviewed.jsonl",
+  "confirmed_names": [
+    "Vennela",
+    "Tara",
+    "Deepthi"
+  ],
+  "pending_names": [
+    "Siri",
+    "Lahari",
+    "Kanti",
+    "Kaluva",
+    "Taamara"
+  ],
+  "public_deployment": false,
+  "real_feedback_training": false,
+  "scope": "Internal functional checks, not a held-out linguistic-quality benchmark. All scripted feedback used an isolated temporary database and was deleted.",
+  "checks": [
+    {
+      "check": "Internal readiness with three confirmed names",
+      "passed": true,
+      "detail": {
+        "knowledge_version": "21687861b415a178c114",
+        "knowledge_records": 825,
+        "catalog_version": "32d15b32aa0fdef5dfd1",
+        "reviewed_names": 3,
+        "ranker_version": "baseline-v2",
+        "public_launch_ready": false,
+        "stage": "internal testing"
+      }
+    },
+    {
+      "check": "Theme: moonlight",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "Vennela"
+        ],
+        "actual": [
+          "Vennela"
+        ]
+      }
+    },
+    {
+      "check": "Theme: star",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "Tara"
+        ],
+        "actual": [
+          "Tara"
+        ]
+      }
+    },
+    {
+      "check": "Theme: radiance",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "Deepthi"
+        ],
+        "actual": [
+          "Deepthi"
+        ]
+      }
+    },
+    {
+      "check": "Theme: brightness",
+      "passed": true,
+      "detail": {
+        "expected": [
+          "Deepthi"
+        ],
+        "actual": [
+          "Deepthi"
+        ]
+      }
+    },
+    {
+      "check": "Theme: ocean",
+      "passed": true,
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "Theme: asdfzzxq",
+      "passed": true,
+      "detail": {
+        "expected": [],
+        "actual": []
+      }
+    },
+    {
+      "check": "Hard filters: {\"pure_telugu\": true}",
+      "passed": true,
+      "detail": {
+        "actual": [
+          "Vennela"
+        ]
+      }
+    },
+    {
+      "check": "Hard filters: {\"gender\": \"boy\"}",
+      "passed": true,
+      "detail": {
+        "actual": []
+      }
+    },
+    {
+      "check": "Hard filters: {\"starts_with\": \"D\"}",
+      "passed": true,
+      "detail": {
+        "actual": [
+          "Deepthi"
+        ]
+      }
+    },
+    {
+      "check": "Hard filters: {\"starts_with\": \"వ\"}",
+      "passed": true,
+      "detail": {
+        "actual": [
+          "Vennela"
+        ]
+      }
+    },
+    {
+      "check": "Hard filters: {\"starts_with\": \"T\", \"pure_telugu\": true}",
+      "passed": true,
+      "detail": {
+        "actual": []
+      }
+    },
+    {
+      "check": "Name request: Give me girl names meaning radiance",
+      "passed": true,
+      "detail": {
+        "actual": [
+          "Deepthi"
+        ]
+      }
+    },
+    {
+      "check": "Name request: అచ్చతెలుగు అమ్మాయిల పేర్లు",
+      "passed": true,
+      "detail": {
+        "actual": [
+          "Vennela"
+        ]
+      }
+    },
+    {
+      "check": "Name request: Give me girl names meaning ocean",
+      "passed": true,
+      "detail": {
+        "actual": []
+      }
+    },
+    {
+      "check": "Response includes citations without private reviewer data",
+      "passed": true,
+      "detail": {
+        "source_count": 2
+      }
+    },
+    {
+      "check": "Like defaults to no training consent",
+      "passed": true,
+      "detail": {
+        "status": "pending_review",
+        "training_consent": false
+      }
+    },
+    {
+      "check": "Changed vote updates the same event",
+      "passed": true,
+      "detail": {
+        "same_event": true
+      }
+    },
+    {
+      "check": "Another session cannot vote on this impression",
+      "passed": true,
+      "detail": {
+        "status_code": 400
+      }
+    },
+    {
+      "check": "Unshown candidate rejected",
+      "passed": true,
+      "detail": {
+        "status_code": 400
+      }
+    },
+    {
+      "check": "Test feedback is excluded from training",
+      "passed": true,
+      "detail": {
+        "training_rows": 0
+      }
+    },
+    {
+      "check": "Preference training keeps the baseline without real data",
+      "passed": true,
+      "detail": {
+        "candidate_written": false
+      }
+    },
+    {
+      "check": "Withdrawal deletes all isolated test activity",
+      "passed": true,
+      "detail": {
+        "votes": 0,
+        "impressions": 0,
+        "shown": 0
+      }
+    }
+  ]
+}

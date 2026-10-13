@@ -2,20 +2,24 @@
 
 The [first batch](../reports/name_review/README.md) contains eight AI-prepared
 proposals, exact source revisions, and unresolved questions. Vennela, Tara and
-Deepthi have explicit given-name evidence in the linked source pages. That is
-source support, not a claim that a Telugu human has already approved them.
+Deepthi have explicit given-name evidence in the linked source pages. The project
+owner confirmed the displayed three-name table on 2026-10-13, including the
+spellings, intended meanings and origin labels. This is owner confirmation for
+internal testing, not an independent expert certification.
 
-All eight decisions remain **pending**. No active catalog or real feedback has
-been created. Dictionary grammatical gender must not be used as a person's name
+The default internal catalog now contains those **three confirmed names**. The
+other five remain pending. No real public feedback or preference model has been
+created. Dictionary grammatical gender must not be used as a person's name
 gender, and writing a word in Telugu does not establish native Telugu origin.
+See [the current pilot status](../reports/name_review/pilot_activation.json).
 
 ## The first decisions
 
-| Proposed pilot name | Intended meaning | Proposed name gender | Proposed origin | Decision needed |
+| Confirmed pilot name | Intended meaning | Name gender | Origin | Review result |
 | --- | --- | --- | --- | --- |
-| వెన్నెల / Vennela | Moonlight | Girl | Telugu | Confirm suitability, meaning and spelling |
-| తార / Tara | Star | Girl | Sanskrit | Confirm the star sense and general-Telugu use; exclude from pure-Telugu results |
-| దీప్తి / Deepthi | Radiance; brightness | Girl | Sanskrit | Confirm suitability and Deepthi versus Deepti spelling; exclude from pure-Telugu results |
+| వెన్నెల / Vennela | Moonlight | Girl | Telugu | Confirmed for the internal pilot |
+| తార / Tara | Star | Girl | Sanskrit | Star sense confirmed; excluded from pure-Telugu results |
+| దీప్తి / Deepthi | Radiance; brightness | Girl | Sanskrit | Deepthi spelling confirmed; excluded from pure-Telugu results |
 
 Siri, Lahari, Kanti and Kaluva require further origin or name-usage review.
 Taamara is held because the same Telugu word also has an unfavorable non-floral
@@ -69,7 +73,9 @@ notes and identities private; they do not need to be committed to GitHub.
 
 ## Test a reviewed candidate catalog locally
 
-After the decisions have been recorded and compiled:
+The three-name pilot is already available at the default path
+`data/names/reviewed.jsonl`. Start the API normally to use it. For later candidate
+bundles, after their decisions have been recorded and compiled:
 
 ```bash
 AKSHARA_NAME_CATALOG=data/private/name_pilot_001/catalog.jsonl uvicorn api.main:app --host 127.0.0.1 --port 8000
@@ -80,6 +86,12 @@ path before starting Uvicorn. Open `http://127.0.0.1:8000/docs` to exercise the 
 Check `/ready`, `/search`, `/names`, and session feedback. Name results should
 honor gender, Telugu/English prefixes, and pure-Telugu origin filters, including
 empty results when no reviewed candidate matches.
+
+Meaning searches include the confirmed name text, not just dictionary glosses.
+`radiance` and `brightness` find Deepthi even when those English words were not
+present in the source snapshot. Names with no topic relevance are excluded.
+The catalog version includes the scoring schema so earlier feature values or
+rankers cannot silently carry over to this revised retrieval behavior.
 
 Use a separate `AKSHARA_FEEDBACK_DB` path for exploratory tests. Test votes are
 not authentic public preference data and must never be promoted into training.

@@ -204,7 +204,8 @@ def render_report(batch):
     lines = [
         "# First Telugu name review batch",
         "",
-        "All entries are AI-prepared proposals, pending human review. None is active.",
+        "This is the original AI-prepared batch. Every proposal starts pending human review.",
+        "Approval and activation are recorded separately; source notes below are not a live catalog.",
         "The spelling, intended meaning, naming usage, and origin must be checked separately.",
         "",
         f"Knowledge version: `{batch['knowledge_version']}` · Batch: `{batch['batch_id']}`",

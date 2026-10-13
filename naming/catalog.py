@@ -3,11 +3,13 @@ from pathlib import Path
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 from knowledge.schema import digest, normalize, Record
 
 FEATURE_NAMES = ["relevance", "brevity", "established", "source_diversity"]
 BASELINE_WEIGHTS = [1.0, 0.15, 0.15, 0.10]
+SCORING_SCHEMA_VERSION = "reviewed-meanings-v2"
 
 
 class Name(BaseModel):
@@ -64,9 +66,22 @@ class Catalog:
         for name in self.names:
             if any(key not in self.evidence for key in name.evidence_ids):
                 raise ValueError(f"Unknown evidence for {name.name_te}")
-        self.version = digest([n.model_dump() for n in self.names])[:20]
+        # Changing relevance features must not reuse earlier votes or rankers.
+        self.version = digest(
+            [SCORING_SCHEMA_VERSION, [n.model_dump() for n in self.names]]
+        )[:20]
+        self.name_vectorizer = TfidfVectorizer(
+            token_pattern=r"[a-zA-Z]+|[\u0c00-\u0c7f]+", ngram_range=(1, 2)
+        )
+        self.name_vectors = (
+            self.name_vectorizer.fit_transform(
+                [f"{n.name_te} {n.name_en} {n.meaning}" for n in self.names]
+            )
+            if self.names
+            else None
+        )
         self.weights = BASELINE_WEIGHTS
-        self.model_version = "baseline-v1"
+        self.model_version = "baseline-v2"
         if model_path:
             model = json.loads(model_path.read_text(encoding="utf-8"))
             if (
@@ -91,13 +106,22 @@ class Catalog:
             self.model_version = model["version"]
 
     def recommend(self, query: NameQuery):
+        if not self.names:
+            return []
         relevance = (
             {r.id: score for r, score in self.knowledge.find(query.query, 50)}
             if query.query
             else {}
         )
+        reviewed_relevance = (
+            (self.name_vectors @ self.name_vectorizer.transform([query.query]).T)
+            .toarray()
+            .ravel()
+            if query.query
+            else [0.0] * len(self.names)
+        )
         ranked = []
-        for name in self.names:
+        for position, name in enumerate(self.names):
             if query.gender and name.gender not in {query.gender, "unisex"}:
                 continue
             prefix = query.starts_with.casefold()
@@ -108,6 +132,13 @@ class Catalog:
                 continue
             if query.pure_telugu and name.origin != "telugu":
                 continue
+            relevance_score = max(
+                float(reviewed_relevance[position]),
+                max((relevance.get(key, 0) for key in name.evidence_ids), default=0),
+            )
+            # Popularity/style priors cannot make an unrelated name match a theme.
+            if query.query and relevance_score <= 0:
+                continue
             # Keep facts and hard constraints outside the learned score.
             sources = sorted(
                 {
@@ -117,7 +148,7 @@ class Catalog:
                 }
             )
             features = [
-                max((relevance.get(key, 0) for key in name.evidence_ids), default=0),
+                relevance_score,
                 1.0 / max(len(name.name_en), 1),
                 float(name.status == "established"),
                 min(len(sources), 5) / 5,

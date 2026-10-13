@@ -14,7 +14,7 @@ from naming.catalog import Catalog, NameQuery
 from rag.context_builder import ContextBuilder
 from rag.context_compressor import ContextCompressor
 from rag.generator import Generator
-from rag.query_router import QueryRouter
+from rag.query_router import QueryRouter, name_topic
 
 app = FastAPI(title="AksharaOS API", version="0.2.0")
 
@@ -224,11 +224,13 @@ def ask(
     if QueryRouter().detect_mode(body.query) == "name":
         query = body.query.casefold()
         girl = bool(
-            re.search(r"\b(girl|female|ammayi|ammayila)\b|అమ్మాయి|బాలిక", query)
+            re.search(r"\b(girls?|females?|ammayi|ammayila)\b|అమ్మాయి|బాలిక", query)
         )
-        boy = bool(re.search(r"\b(boy|male|abbayi|abbayila)\b|అబ్బాయి|బాలుడు", query))
+        boy = bool(
+            re.search(r"\b(boys?|males?|abbayi|abbayila)\b|అబ్బాయి|బాలుడు", query)
+        )
         name_query = NameQuery(
-            query=body.query,
+            query=name_topic(body.query),
             gender="girl" if girl and not boy else "boy" if boy and not girl else None,
             pure_telugu=bool(re.search(r"అచ్చ|pure telugu|accha telugu", query)),
             top_k=body.top_k,

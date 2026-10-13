@@ -46,9 +46,10 @@ local Ollama. Name requests always go through the reviewed catalog.
 
 `/health` is process liveness. `/ready` reports knowledge and catalog versions and
 explicitly reports the internal-testing stage. It is not public-launch approval.
-The default name catalog is intentionally absent: `/names` returns
-`no_reviewed_matches` until a human-reviewed catalog is supplied. It never labels
-an arbitrary dictionary word as a suitable baby name.
+The default internal catalog now contains the three owner-confirmed names
+Vennela, Tara and Deepthi. `/names` returns `no_reviewed_matches` when the confirmed
+catalog has no result for the topic or hard filters. The other five first-batch
+proposals remain pending. Arbitrary dictionary words do not become names.
 
 ## Refresh sources and fit the retrieval model
 
