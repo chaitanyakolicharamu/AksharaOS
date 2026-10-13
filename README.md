@@ -31,6 +31,9 @@ The reviewed name catalog still requires Telugu human review. Until then, `/name
 returns `no_reviewed_matches`. Retrieval fitting is complete; no LLM fine-tuning
 or real-feedback preference training has been performed.
 
+[First name-review batch: eight candidates and source checks](reports/name_review/README.md)
+· [Record review decisions and test a candidate catalog](docs/name-review.md)
+
 [Full workflow: sources, knowledge builds, name review, training, and rollout](docs/knowledge-and-feedback.md)
 
 [Source attribution and dataset terms](data/knowledge/README.md) ·

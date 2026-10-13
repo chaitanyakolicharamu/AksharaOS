@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "assessment": "AI source comparison; awaiting human review",
+  "knowledge_version": "21687861b415a178c114",
+  "items": [
+    {
+      "proposal": {
+        "name_te": "వెన్నెల",
+        "name_en": "Vennela",
+        "meaning": "Moonlight (చంద్రుని వెలుగు)",
+        "gender": "girl",
+        "origin": "telugu",
+        "status": "established",
+        "flags": [],
+        "notes": "Proposed first pilot candidate. The English Wiktionary entry explicitly records Telugu female given-name usage and derives the word from Telugu elements for light and moon. Human confirmation of spelling, meaning and suitability is still required.",
+        "observations": {
+          "968286f89b5e9154dbe23a4c": "Lists moonlight, a Telugu compound derivation, and female given-name usage. The original lexical importer retained only the meaning; the full linked revision supplies the additional naming evidence.",
+          "9fdde2bfcc41cca75877636a": "Describes the light coming from the moon."
+        }
+      },
+      "evidence": [
+        {
+          "id": "968286f89b5e9154dbe23a4c",
+          "title": "వెన్నెల",
+          "text": "moonlight",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "en_wiktionary_te",
+              "url": "https://en.wiktionary.org/w/index.php?title=%E0%B0%B5%E0%B1%86%E0%B0%A8%E0%B1%8D%E0%B0%A8%E0%B1%86%E0%B0%B2&oldid=87463063",
+              "revision": "87463063",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "English Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:38.288427+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        },
+        {
+          "id": "9fdde2bfcc41cca75877636a",
+          "title": "వెన్నెల",
+          "text": "చంద్రుని నుండి వెలువడే కాంతి; English: (మూన్ లైట్) Moonlight, moonshine",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "te_wiktionary",
+              "url": "https://te.wiktionary.org/w/index.php?title=%E0%B0%B5%E0%B1%86%E0%B0%A8%E0%B1%8D%E0%B0%A8%E0%B1%86%E0%B0%B2&oldid=960362",
+              "revision": "960362",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Telugu Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:24.559509+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "27841c323599535c8d778944"
+    },
+    {
+      "proposal": {
+        "name_te": "తార",
+        "name_en": "Tara",
+        "meaning": "Star (నక్షత్రం)",
+        "gender": "girl",
+        "origin": "sanskrit",
+        "status": "established",
+        "flags": [
+          "multiple_senses"
+        ],
+        "notes": "Proposed first pilot candidate for general Telugu naming, excluded from pure-Telugu-origin results. Keep the intended star meaning separate from the entry's eye-pupil and mythological-person senses. The source explicitly records a female given name from Sanskrit.",
+        "observations": {
+          "2d7b50f7a678ace18f1925d2": "Lists star and other senses, Sanskrit derivation, and female given-name usage.",
+          "0344176558fa80fb005bb94f": "Also gives the star meaning alongside mythological and anatomical senses."
+        }
+      },
+      "evidence": [
+        {
+          "id": "0344176558fa80fb005bb94f",
+          "title": "తార",
+          "text": "బృహస్పతి భార్య మరియు చంద్రుని ప్రియురాలు.; తారుని కుమార్తె వాలి భార్య. అంగదుని తల్లి. వాలి మరణానంతరం వాలి సోదరుడు సుగ్రీవుడు ఈమెను పెండ్లాడాడు.; నక్షత్రము; English: star, the pupil of the eye",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "te_wiktionary",
+              "url": "https://te.wiktionary.org/w/index.php?title=%E0%B0%A4%E0%B0%BE%E0%B0%B0&oldid=972480",
+              "revision": "972480",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Telugu Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:24.559509+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        },
+        {
+          "id": "2d7b50f7a678ace18f1925d2",
+          "title": "తార",
+          "text": "(astronomy) star; (anatomy) eye pupil; the wife of Brihaspati; Vali's wife",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "en_wiktionary_te",
+              "url": "https://en.wiktionary.org/w/index.php?title=%E0%B0%A4%E0%B0%BE%E0%B0%B0&oldid=84446307",
+              "revision": "84446307",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "English Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:38.288427+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "2da8c05ed2326f95f08e0e0e"
+    },
+    {
+      "proposal": {
+        "name_te": "దీప్తి",
+        "name_en": "Deepthi",
+        "meaning": "Radiance; brightness (కాంతి, ప్రకాశం)",
+        "gender": "girl",
+        "origin": "sanskrit",
+        "status": "established",
+        "flags": [
+          "single_source",
+          "romanized_spelling_choice"
+        ],
+        "notes": "Proposed first pilot candidate for general Telugu naming, excluded from pure-Telugu-origin results. Telugu Wiktionary explicitly describes a woman's name and marks the word as Sanskrit-derived. Confirm whether the pilot spelling should be Deepthi or Deepti; the Telugu spelling is దీప్తి.",
+        "observations": {
+          "ab71ecf7fe9e4f6ae20b4a37": "The full revision identifies women's-name usage and Sanskrit origin; its meaning section gives light and radiance."
+        }
+      },
+      "evidence": [
+        {
+          "id": "ab71ecf7fe9e4f6ae20b4a37",
+          "title": "దీప్తి",
+          "text": "వెలుగు=కాంతి/ప్రభ/ఓజస్సు/ప్రకాశము; English: light,light, luster /glow",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "te_wiktionary",
+              "url": "https://te.wiktionary.org/w/index.php?title=%E0%B0%A6%E0%B1%80%E0%B0%AA%E0%B1%8D%E0%B0%A4%E0%B0%BF&oldid=874317",
+              "revision": "874317",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Telugu Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:24.559509+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "1ac79b595453d0901e46ffab"
+    },
+    {
+      "proposal": {
+        "name_te": "సిరి",
+        "name_en": "Siri",
+        "meaning": "Wealth; prosperity (సంపద)",
+        "gender": null,
+        "origin": "unknown",
+        "status": null,
+        "flags": [
+          "origin_unverified",
+          "name_usage_needs_confirmation"
+        ],
+        "notes": "The wealth/prosperity meaning is supported. The checked entry also calls it a name of Lakshmi, but does not establish its etymology or a modern given-name classification. Do not infer native Telugu origin merely from Telugu script or from a synonym.",
+        "observations": {
+          "e12674017ff128752264ef41": "Gives prosperity and wealth, with a divine-name sense; no etymology section was present when checked.",
+          "5ad79393d8b4b415362718a7": "Supports the wealth meaning."
+        }
+      },
+      "evidence": [
+        {
+          "id": "5ad79393d8b4b415362718a7",
+          "title": "సిరి",
+          "text": "లక్ష్మి=సంపద/భాగ్యము/చుక్క/తఱుగనిది/అదృష్టము; ఆస్తి,కలిమి, మిసిమి,సంపత్తి, సంపాదన, సొత్తు, సొమ్ము....తెలుగు పర్యాయపద నిఘంటువు (జి.యన్.రెడ్డి) 1990; English: wealth,wealth",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "te_wiktionary",
+              "url": "https://te.wiktionary.org/w/index.php?title=%E0%B0%B8%E0%B0%BF%E0%B0%B0%E0%B0%BF&oldid=976562",
+              "revision": "976562",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Telugu Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:24.559509+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        },
+        {
+          "id": "e12674017ff128752264ef41",
+          "title": "సిరి",
+          "text": "a name of Lakshmi, the goddess of riches; fortune, prosperity, wealth; beauty, splendour, lustre",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "en_wiktionary_te",
+              "url": "https://en.wiktionary.org/w/index.php?title=%E0%B0%B8%E0%B0%BF%E0%B0%B0%E0%B0%BF&oldid=83765524",
+              "revision": "83765524",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "English Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:38.288427+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "fba8dd53360fe8aa9ddd6102"
+    },
+    {
+      "proposal": {
+        "name_te": "లహరి",
+        "name_en": "Lahari",
+        "meaning": "Wave (అల)",
+        "gender": null,
+        "origin": "unknown",
+        "status": null,
+        "flags": [
+          "single_source",
+          "origin_unverified",
+          "name_usage_needs_confirmation"
+        ],
+        "notes": "The source supports a wave meaning, but its etymology field is empty and it does not explicitly describe naming usage. Keep origin and gender unresolved until review.",
+        "observations": {
+          "6bae3a73649d5b7ea808caf3": "The meaning section points to wave; the English gloss specifies a large wave."
+        }
+      },
+      "evidence": [
+        {
+          "id": "6bae3a73649d5b7ea808caf3",
+          "title": "లహరి",
+          "text": "లాహిరి/ అల; English: en: big wave",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "te_wiktionary",
+              "url": "https://te.wiktionary.org/w/index.php?title=%E0%B0%B2%E0%B0%B9%E0%B0%B0%E0%B0%BF&oldid=838635",
+              "revision": "838635",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Telugu Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:24.559509+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "0abc85145823b27ab96c5658"
+    },
+    {
+      "proposal": {
+        "name_te": "కాంతి",
+        "name_en": "Kanti",
+        "meaning": "Light; brilliance (వెలుగు)",
+        "gender": null,
+        "origin": "unknown",
+        "status": null,
+        "flags": [
+          "single_source",
+          "origin_unverified",
+          "name_usage_needs_confirmation"
+        ],
+        "notes": "The saved revision supports the lexical meaning. Full-page verification could not be completed in this review, so origin and given-name usage are left unresolved.",
+        "observations": {
+          "884b7d5ad2011895d829f7bd": "The committed source snapshot gives light and brilliance."
+        }
+      },
+      "evidence": [
+        {
+          "id": "884b7d5ad2011895d829f7bd",
+          "title": "కాంతి",
+          "text": "(physics) light; brilliance",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "en_wiktionary_te",
+              "url": "https://en.wiktionary.org/w/index.php?title=%E0%B0%95%E0%B0%BE%E0%B0%82%E0%B0%A4%E0%B0%BF&oldid=87981914",
+              "revision": "87981914",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "English Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:38.288427+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "1073b4c519859d3875ef8ee4"
+    },
+    {
+      "proposal": {
+        "name_te": "కలువ",
+        "name_en": "Kaluva",
+        "meaning": "Water lily (కలువ పువ్వు)",
+        "gender": null,
+        "origin": "unknown",
+        "status": null,
+        "flags": [
+          "origin_unverified",
+          "name_usage_needs_confirmation",
+          "botanical_translation"
+        ],
+        "notes": "The Telugu source gives water lily; the English entry broadens this to water lily or lotus. Prefer the supported water-lily gloss without claiming a botanical species. Suitability as an established or coined personal name still needs review.",
+        "observations": {
+          "214c4377552e80edc3acf3c3": "Gives water lily or lotus without an etymology or a given-name entry.",
+          "56ad8e735b6fe58e91875579": "Gives the water-lily meaning."
+        }
+      },
+      "evidence": [
+        {
+          "id": "214c4377552e80edc3acf3c3",
+          "title": "కలువ",
+          "text": "the water lily or lotus",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "en_wiktionary_te",
+              "url": "https://en.wiktionary.org/w/index.php?title=%E0%B0%95%E0%B0%B2%E0%B1%81%E0%B0%B5&oldid=86400975",
+              "revision": "86400975",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "English Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:38.288427+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        },
+        {
+          "id": "56ad8e735b6fe58e91875579",
+          "title": "కలువ",
+          "text": "కలువ పువ్వు /ఉత్పలము,/ కజ్జలము, / కలుహారము; English: water lily",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "te_wiktionary",
+              "url": "https://te.wiktionary.org/w/index.php?title=%E0%B0%95%E0%B0%B2%E0%B1%81%E0%B0%B5&oldid=893718",
+              "revision": "893718",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Telugu Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:24.559509+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "a2d247c6519227a31bfe74c6"
+    },
+    {
+      "proposal": {
+        "name_te": "తామర",
+        "name_en": "Taamara",
+        "meaning": "Lotus (తామర పువ్వు), intended floral sense only",
+        "gender": null,
+        "origin": "unknown",
+        "status": null,
+        "flags": [
+          "unfavorable_alternate_meaning",
+          "origin_unverified",
+          "name_usage_needs_confirmation"
+        ],
+        "notes": "Hold from the first pilot. Both dictionaries also record a skin-condition sense. The English entry specifically gives ringworm. Human judgment is needed before using it as a baby-name suggestion. Its Tamil cognate alone is not treated as proof for the pure-Telugu-origin filter.",
+        "observations": {
+          "72bba32ecbeaff793d9a76a3": "Lists lotus and ringworm as separate senses; notes a Tamil cognate.",
+          "182091f406022745584524ff": "Also mixes floral and skin-condition senses, requiring explicit sense selection."
+        }
+      },
+      "evidence": [
+        {
+          "id": "182091f406022745584524ff",
+          "title": "తామర",
+          "text": "1. అర్ధము: తామరపువ్వు, కమలము,; తామర అనేది చర్మానికి సంబంధించిన ఒక వ్యాధి; ఒక చర్మ వ్యాధి.; 2. అర్ధము; నీటి కొలనులో పెరుగు,వెడల్పాటి పత్రములున్న మొక్క=తామర, ఒక అందమైన పువ్వుల మొక్క.; ఒక విధమైన పుష్పము.; English: eczema (ఎక్జిమ)a lotus, a skin disease /herpes",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "te_wiktionary",
+              "url": "https://te.wiktionary.org/w/index.php?title=%E0%B0%A4%E0%B0%BE%E0%B0%AE%E0%B0%B0&oldid=955092",
+              "revision": "955092",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Telugu Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:24.559509+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        },
+        {
+          "id": "72bba32ecbeaff793d9a76a3",
+          "title": "తామర",
+          "text": "lotus; ringworm",
+          "kind": "lexical",
+          "language": "te",
+          "evidence": [
+            {
+              "source_id": "en_wiktionary_te",
+              "url": "https://en.wiktionary.org/w/index.php?title=%E0%B0%A4%E0%B0%BE%E0%B0%AE%E0%B0%B0&oldid=91310579",
+              "revision": "91310579",
+              "license": "CC-BY-SA-4.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "English Wiktionary contributors; authors in linked revision history",
+              "retrieved_at": "2026-10-13T04:55:38.288427+00:00"
+            }
+          ],
+          "review_status": "unreviewed"
+        }
+      ],
+      "candidate_id": "458b51a09be289baba255c12"
+    }
+  ],
+  "batch_id": "39383a2b59500143c3f3"
+}

@@ -111,6 +111,11 @@ in Chroma's scalar metadata. The new local API returns structured `evidence` arr
 
 ## Review names before serving them
 
+Use the [first cited review batch](../reports/name_review/README.md) and the
+[decision workflow](name-review.md) to prepare a candidate catalog. AI source
+observations are separate from human approvals. The compiler requires explicit
+checks, current evidence, a reviewer and date; it never activates a catalog.
+
 The build creates `name_review_queue.jsonl` under its version directory. It is an
 unlabelled queue, not name-training data. A Telugu reviewer should select suitable
 names, choose a supported meaning, verify transliteration and origin, and supply

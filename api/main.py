@@ -157,7 +157,14 @@ def name_response(body, request, response, catalog, store):
         max_age=30 * 86400,
     )
     return {
-        "results": [{k: v for k, v in row.items() if k != "features"} for row in rows],
+        "results": [
+            {
+                k: v
+                for k, v in row.items()
+                if k not in {"features", "reviewed_by", "reviewed_at"}
+            }
+            for row in rows
+        ],
         "impression_id": impression,
         "catalog_version": catalog.version,
         "knowledge_version": catalog.knowledge.version,
