@@ -1,0 +1,320 @@
+{
+  "checked_at_utc": "2026-10-15T01:27:33.053768+00:00",
+  "knowledge_version": "5c01f4822c368d060fa6",
+  "records": 6102,
+  "included_sources": 11,
+  "passed": 32,
+  "total": 32,
+  "checks": [
+    {
+      "check": "Search source: bangaru_nanelu",
+      "passed": true,
+      "detail": {
+        "query": "నక్షత్రం",
+        "record_ids": [
+          "4e517649b968a1ec89304c1e",
+          "0ea4ac6bfe326b5c7c28a887",
+          "4e1f8c3d36fd60986741f688"
+        ],
+        "pdf_pages": [
+          335,
+          240,
+          282
+        ]
+      }
+    },
+    {
+      "check": "Search source: telugu_paryaya_nighantuvu",
+      "passed": true,
+      "detail": {
+        "query": "అశ్విని",
+        "record_ids": [
+          "ea9e12f4370ea4620d40bff7"
+        ],
+        "pdf_pages": [
+          19
+        ]
+      }
+    },
+    {
+      "check": "Search source: te_wiktionary",
+      "passed": true,
+      "detail": {
+        "query": "వెన్నెల",
+        "record_ids": [
+          "9fdde2bfcc41cca75877636a",
+          "e1d28e6e292adb242eeecb20",
+          "2f9c53651f2968065d859157"
+        ],
+        "pdf_pages": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "check": "Search source: en_wiktionary_te",
+      "passed": true,
+      "detail": {
+        "query": "moonlight",
+        "record_ids": [
+          "968286f89b5e9154dbe23a4c",
+          "60bc83552eeb5ff0ff391aef",
+          "34119dc2ce47b073a8c13df1"
+        ],
+        "pdf_pages": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "check": "Search source: wikidata_te",
+      "passed": true,
+      "detail": {
+        "query": "భాష",
+        "record_ids": [
+          "2de0f7f50938f2a0d6f5cf42"
+        ],
+        "pdf_pages": [
+          null
+        ]
+      }
+    },
+    {
+      "check": "Search source: pedda_bala_siksha",
+      "passed": true,
+      "detail": {
+        "query": "సరస్వతి",
+        "record_ids": [
+          "16d46bc893fa48f809024a35"
+        ],
+        "pdf_pages": [
+          16
+        ]
+      }
+    },
+    {
+      "check": "Search source: gouru_pedda_bala_siksha",
+      "passed": true,
+      "detail": {
+        "query": "సంధి",
+        "record_ids": [
+          "e07936f0de065db8edd9da0a",
+          "4ae2190f301cc5a8a5070a99",
+          "64ddc83a9b79e972efee364f"
+        ],
+        "pdf_pages": [
+          48,
+          48,
+          48
+        ]
+      }
+    },
+    {
+      "check": "Search source: telugu_bhasha_charitra",
+      "passed": true,
+      "detail": {
+        "query": "తెలుగు భాష",
+        "record_ids": [
+          "d210a16c037bdefa6ffedbac",
+          "e72c7dffc237dc8a438a136e",
+          "3f2a967b5f0dbe8168e29171"
+        ],
+        "pdf_pages": [
+          447,
+          511,
+          30
+        ]
+      }
+    },
+    {
+      "check": "Search source: balavyakaranam_1911",
+      "passed": true,
+      "detail": {
+        "query": "సంధి",
+        "record_ids": [
+          "dffb4fa7f9aa30b018d1f1e5",
+          "e21f6537b64333e9ea1c6291",
+          "c77e93f57a604740e0da3f6c"
+        ],
+        "pdf_pages": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "check": "Search source: saraswati_dvadasha",
+      "passed": true,
+      "detail": {
+        "query": "Saraswati",
+        "record_ids": [
+          "bdb7e1156cc9dd764bf42e98",
+          "be8f67eff477a3143ef5e428",
+          "7d39e7de49d8e82eb729541f"
+        ],
+        "pdf_pages": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "check": "Search source: vishnu_sahasranama",
+      "passed": true,
+      "detail": {
+        "query": "Vishnu",
+        "record_ids": [
+          "67551bc2f7ee582ec60ed49a",
+          "4bd37be7c92a74a562806be7",
+          "e4d6c639ad18fac27c52f308"
+        ],
+        "pdf_pages": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "check": "Combined source retrieval: వెన్నెల",
+      "passed": true,
+      "detail": [
+        "en_wiktionary_te",
+        "te_wiktionary",
+        "telugu_paryaya_nighantuvu"
+      ]
+    },
+    {
+      "check": "Combined source retrieval: అశ్విని",
+      "passed": true,
+      "detail": [
+        "pedda_bala_siksha",
+        "telugu_paryaya_nighantuvu"
+      ]
+    },
+    {
+      "check": "Existing online evidence IDs retained",
+      "passed": true,
+      "detail": 825
+    },
+    {
+      "check": "No extraction auto-approved for training",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Quarantined Lakshmi candidates excluded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Draft records remain unreviewed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "API uses the unified version",
+      "passed": true,
+      "detail": {
+        "knowledge_version": "5c01f4822c368d060fa6",
+        "knowledge_records": 6102,
+        "catalog_version": "32d15b32aa0fdef5dfd1",
+        "reviewed_names": 3,
+        "ranker_version": "baseline-v2",
+        "public_launch_ready": false,
+        "stage": "internal testing",
+        "retrieval": "word + character TF-IDF over one canonical corpus",
+        "knowledge_sources": 11,
+        "dense_embeddings_built": false
+      }
+    },
+    {
+      "check": "Public readiness stays false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "API source inventory matches corpus",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Approved naming example: moonlight",
+      "passed": true,
+      "detail": [
+        "Vennela"
+      ]
+    },
+    {
+      "check": "Name evidence version: moonlight",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Approved naming example: star",
+      "passed": true,
+      "detail": [
+        "Tara"
+      ]
+    },
+    {
+      "check": "Name evidence version: star",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Approved naming example: radiance",
+      "passed": true,
+      "detail": [
+        "Deepthi"
+      ]
+    },
+    {
+      "check": "Name evidence version: radiance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No unsupported approved names: ocean",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No unsupported approved names: asdfzzxq",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Name routing keeps origin filter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "API returns book page citations",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Complete book record accessible",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No real or synthetic votes created",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "scope": "Internal integration and source-coverage checks; not expert linguistic review, held-out naming evaluation, or generated-answer evaluation.",
+  "llm_generation_tested": false,
+  "model_fine_tuned": false,
+  "dense_embeddings_built": false,
+  "public_deployment": false,
+  "feedback": "Temporary impressions only; temporary database removed, no votes created."
+}

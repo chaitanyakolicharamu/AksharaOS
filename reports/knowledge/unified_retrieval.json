@@ -1,0 +1,252 @@
+{
+  "knowledge_version": "5c01f4822c368d060fa6",
+  "records": 6102,
+  "queries": 18,
+  "hit_at_1": 16,
+  "hit_at_5": 17,
+  "mrr": 0.9166666666666666,
+  "scope": "Development smoke queries used during implementation; not held-out evaluation or human name-quality ratings.",
+  "details": [
+    {
+      "query": "moonlight",
+      "expected_titles": [
+        "వెన్నెల",
+        "చంద్రిక",
+        "జ్యోత్స్న"
+      ],
+      "retrieved_titles": [
+        "వెన్నెల",
+        "జ్యోత్స్న",
+        "చంద్రిక",
+        "వెన్నెల",
+        "చంద్రిక"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "wealth",
+      "expected_titles": [
+        "సిరి"
+      ],
+      "retrieved_titles": [
+        "సిరి",
+        "కుబేరుడు",
+        "సిరి"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "friendship",
+      "expected_titles": [
+        "చెలిమి",
+        "స్నేహము"
+      ],
+      "retrieved_titles": [
+        "చెలిమి",
+        "స్నేహము",
+        "స్నేహము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "flower",
+      "expected_titles": [
+        "పువ్వు",
+        "పుష్పము",
+        "సుమము",
+        "విరి"
+      ],
+      "retrieved_titles": [
+        "సుమము",
+        "విరి",
+        "సుమము",
+        "పుష్పము",
+        "పుష్పము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "light",
+      "expected_titles": [
+        "వెలుగు",
+        "జ్యోతి",
+        "కాంతి"
+      ],
+      "retrieved_titles": [
+        "జ్యోతి",
+        "వెలుగు",
+        "దీప్తి",
+        "కాంతి",
+        "కిరణము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "sky",
+      "expected_titles": [
+        "ఆకాశము",
+        "ఆకాశం",
+        "నింగి"
+      ],
+      "retrieved_titles": [
+        "గగనము",
+        "ఆకాశము",
+        "నింగి",
+        "నింగి",
+        "తూర్పు"
+      ],
+      "first_relevant_rank": 2
+    },
+    {
+      "query": "rain",
+      "expected_titles": [
+        "వాన",
+        "వర్షము"
+      ],
+      "retrieved_titles": [
+        "వాన",
+        "వర్షము",
+        "వర్షము",
+        "వాన"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "honey",
+      "expected_titles": [
+        "తేనె",
+        "మధు"
+      ],
+      "retrieved_titles": [
+        "తేనె",
+        "మధు",
+        "తేనె"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "compassion",
+      "expected_titles": [
+        "దయ",
+        "కరుణ"
+      ],
+      "retrieved_titles": [
+        "దయ"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "peace",
+      "expected_titles": [
+        "శాంతి"
+      ],
+      "retrieved_titles": [
+        "శాంతి"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "music",
+      "expected_titles": [
+        "సంగీతం",
+        "సంగీతము",
+        "రాగము",
+        "లయ"
+      ],
+      "retrieved_titles": [
+        "లయ",
+        "రాగము",
+        "వసంతము",
+        "సాహిత్యము",
+        "స్వరము"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "hope",
+      "expected_titles": [
+        "ఆశ"
+      ],
+      "retrieved_titles": [
+        "ఆశ"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "వెన్నెల",
+      "expected_titles": [
+        "వెన్నెల"
+      ],
+      "retrieved_titles": [
+        "వెన్నెల",
+        "వెన్నెల",
+        "జ్యోత్స్న",
+        "చంద్రిక",
+        "3184. శరదృతువు: ఘనాత్యయము, జలదక్రయము, జలాత్యయము, పంటకొరు, ప్రావృడత్యయము, వర్షావసానము, వెన్నెల కారు, "
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "సిరి",
+      "expected_titles": [
+        "సిరి"
+      ],
+      "retrieved_titles": [
+        "సిరి",
+        "సిరి",
+        "2083. మర్జుమందు: పెట్టుమందు, మొగ సిరి, వశ్యౌషధము. 2084, మర్దుమందు పెట్టు వ్యక్తిః మందుల మారి, మందులా"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "చెలిమి",
+      "expected_titles": [
+        "చెలిమి"
+      ],
+      "retrieved_titles": [
+        "చెలిమి",
+        "చెలిమి",
+        "స్నేహము",
+        "1436. స్నేహితురాలు: అంటుకత్తై, కూరి మికత్తై, చెలి, చెలిమరి, చెలిమికత్తె, చెలిమి, చెలువ, చొరవకత్త్రై,",
+        "రహస్య స్థావరం రహస్య స్థావరం గుట్టుడాగగురం. రహస్య స్నేహం గుట్టు చెలిమి. సా.మా. గుట్టు నేయం. రహస్య స్న"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "పువ్వు",
+      "expected_titles": [
+        "పువ్వు"
+      ],
+      "retrieved_titles": [
+        "పువ్వు",
+        "కలువ",
+        "360. పువ్వు: అలరు, ఆర్హవము, కుసుమము, నన, పీలువు, పువ్వ్నము, పువు, పువ్వారు, పుష్పము, పూ; పూవు, ప్రసవ",
+        "పుష్పము",
+        "గ్ని (సన్నగా వెలిగే మంట అనే అర్థంలో) సన్న సెగ. మందారం (118005) ముద్దదాసాని పువ్వు. సా. మా. వాణిద, వా"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "తెలుగు",
+      "expected_titles": [
+        "తెలుగు"
+      ],
+      "retrieved_titles": [
+        "తెలుగు",
+        "తెలుగు పదముల సమాసము అచ్చికము.",
+        "అంకగత్తె",
+        "తెలుగు భాషా చరిత్ర 426 ౪౩% ae శతి గు జ్జ టు గై 7 8/7",
+        "2203. ఇల్లు: అగారము, అవసధము, ఆచార్య జి.ఎన్ . రెడ్డి (110) తెలుగు వర్యాయవద నిఘంటువు"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "query": "పసికందు",
+      "expected_titles": [
+        "పసికందు"
+      ],
+      "retrieved_titles": [],
+      "first_relevant_rank": null
+    }
+  ]
+}

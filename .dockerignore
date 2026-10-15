@@ -13,6 +13,7 @@ data/processed/
 .ruff_cache
 data/private
 data/knowledge/index
+data/knowledge/unified
 models
 .env
 .env.*

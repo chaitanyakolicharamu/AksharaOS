@@ -35,7 +35,7 @@ From the repository root, with Python 3.11 or later:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-core.txt
-python -m knowledge.build
+python -m knowledge.unified_build
 uvicorn api.main:app --host 127.0.0.1 --port 8000
 ```
 
@@ -64,7 +64,7 @@ python -m knowledge.ingest --source en_wiktionary_te --limit 500
 python -m knowledge.ingest --source wikidata_te --limit 500
 python -m knowledge.ingest --source te_wiktionary --titles configs/knowledge_seed_titles.txt --output data/knowledge/sources/te_wiktionary_themes.jsonl
 python -m knowledge.ingest --source en_wiktionary_te --titles configs/knowledge_seed_titles.txt --output data/knowledge/sources/en_wiktionary_te_themes.jsonl
-python -m knowledge.build
+python -m knowledge.unified_build
 python -m knowledge.evaluate --output reports/knowledge/hybrid_retrieval.json
 ```
 
@@ -81,7 +81,7 @@ source checksum), and `kind` (`lexical` or `passage`). Then run:
 
 ```bash
 python -m knowledge.ingest --source brown_1853 --input /path/to/checked_extracts.jsonl
-python -m knowledge.build
+python -m knowledge.unified_build
 ```
 
 Do not label the existing repository PDFs as this edition without checking them.
@@ -90,25 +90,19 @@ license and attribution. Disabled/unapproved sources and mismatched licenses fai
 validation. The registry is an operator-controlled import policy, not legal advice
 or an automatic determination of copyright status.
 
-## Preserve and extend the existing Chroma pipeline
+## One source corpus for the application
 
-The old OCR chunks and vector store remain in place. The default API now uses the
-new attributed local index. The legacy BGE-M3 backend remains available with the
-full requirements installed and `AKSHARA_RETRIEVAL_BACKEND=legacy`.
+The API, RAG CLI, name-review CLI and evaluation CLI use one canonical unified
+index. It includes current extracted dictionary passages, online records and any
+available private book/research inputs. The old Chroma database is preserved as
+an archive; the application no longer switches to it through a backend flag.
 
-To combine the existing curated chunks and new source records in Chroma:
-
-```bash
-pip install -r requirements.txt
-python -m rag.build_multi_vector_store --knowledge-index data/knowledge/index --output data/curated/vector_store_next
-```
-
-The builder refuses an existing destination instead of deleting the active store.
-Evaluate the new store, then set `AKSHARA_RETRIEVAL_BACKEND=legacy` and
-`AKSHARA_VECTOR_DB=data/curated/vector_store_next` when starting the API. This does
-not establish reuse permission for legacy PDFs; review their provenance before
-including them in a public deployment. Citation arrays are kept as `evidence_json`
-in Chroma's scalar metadata. The new local API returns structured `evidence` arrays.
+See [the unified knowledge workflow](unified-knowledge.md) for the full source
+inventory, private input locations, restoration, search filters and limitations.
+The default combined retriever uses word/character TF-IDF. Neural embeddings have
+not been regenerated for the unified corpus; old vectors must not be paired with
+changed passage text. Source-specific review and reuse status remain attached to
+records inside the shared corpus.
 
 ## Review names before serving them
 

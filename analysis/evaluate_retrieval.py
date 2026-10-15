@@ -1,5 +1,5 @@
 from rag.evaluator import RetrievalEvaluator
-from rag.retriever import Retriever
+from knowledge.unified_search import UnifiedSearch
 
 TEST_QUERIES = [
     {"query": "పసికందు", "expected_terms": ["బిడ్డ", "శిశువు", "పసిపాప"]},
@@ -80,7 +80,7 @@ def print_results(evaluation: dict):
 
 
 def main():
-    retriever = Retriever()
+    retriever = UnifiedSearch()
     evaluator = RetrievalEvaluator(
         retriever=retriever,
         test_queries=TEST_QUERIES,

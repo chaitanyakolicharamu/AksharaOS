@@ -1,6 +1,1 @@
 -r requirements-core.txt
-chromadb
-sentence-transformers
-pdf2image
-pytesseract
-pillow

@@ -21,24 +21,22 @@ app = FastAPI(title="AksharaOS API", version="0.2.0")
 
 @lru_cache
 def get_knowledge():
-    from knowledge.search import KnowledgeSearch
+    from knowledge.unified_search import UnifiedSearch
 
     try:
-        return KnowledgeSearch(
-            Path(os.getenv("AKSHARA_KNOWLEDGE_DIR", "data/knowledge/index"))
+        return UnifiedSearch(
+            Path(os.getenv("AKSHARA_KNOWLEDGE_DIR", "data/knowledge/unified"))
         )
     except (FileNotFoundError, ValueError) as exc:
         raise HTTPException(
-            503, "Knowledge index unavailable; run python -m knowledge.build"
+            503, "Unified knowledge unavailable; run python -m knowledge.unified_build"
         ) from exc
 
 
 @lru_cache
 def get_retriever():
-    if os.getenv("AKSHARA_RETRIEVAL_BACKEND", "knowledge") == "legacy":
-        from rag.retriever import Retriever
-
-        return Retriever()
+    # One corpus is authoritative for /search, /ask and reviewed-name evidence.
+    # The older Chroma snapshot remains an archive, not a second app backend.
     return get_knowledge()
 
 
@@ -68,6 +66,8 @@ class SearchRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
     query: str = Field(min_length=1, max_length=500)
     top_k: int = Field(default=5, ge=1, le=20)
+    source_ids: list[str] = Field(default_factory=list, max_length=30)
+    reviewed_only: bool = False
 
     @field_validator("query")
     @classmethod
@@ -104,12 +104,39 @@ def ready(knowledge=Depends(get_knowledge), catalog=Depends(get_catalog)):
         "ranker_version": catalog.model_version,
         "public_launch_ready": False,
         "stage": "internal testing",
+        "retrieval": knowledge.manifest.get("retrieval", "local lexical retrieval"),
+        "knowledge_sources": knowledge.manifest.get("included_source_count"),
+        "dense_embeddings_built": knowledge.manifest.get(
+            "dense_embeddings_built", False
+        ),
     }
+
+
+@app.get("/knowledge")
+def knowledge_status(knowledge=Depends(get_knowledge)):
+    return {"knowledge_version": knowledge.version, **knowledge.manifest}
+
+
+@app.get("/knowledge/records/{record_id}")
+def knowledge_record(record_id: str, knowledge=Depends(get_knowledge)):
+    record = next((r for r in knowledge.records if r.id == record_id), None)
+    if record is None:
+        raise HTTPException(404, "Unknown knowledge record")
+    return {"knowledge_version": knowledge.version, "record": record.model_dump()}
+
+
+def retrieve(body, retriever):
+    options = {}
+    if body.source_ids:
+        options["source_ids"] = body.source_ids
+    if body.reviewed_only:
+        options["reviewed_only"] = True
+    return retriever.retrieve(query=body.query, top_k=body.top_k, **options)
 
 
 @app.post("/search")
 def search(body: SearchRequest, retriever=Depends(get_retriever)):
-    results = retriever.retrieve(query=body.query, top_k=body.top_k)
+    results = retrieve(body, retriever)
     return {
         "query": body.query,
         "mode": results["mode"],
@@ -239,13 +266,13 @@ def ask(
             name_query, request, response, get_catalog(), get_feedback()
         )
         return {"query": body.query, "mode": "name", **result}
-    results = retriever.retrieve(query=body.query, top_k=body.top_k)
+    results = retrieve(body, retriever)
     context = ContextBuilder().build(results)
     # The legacy compressor assumes comma-separated synonyms and drops multiword
     # dictionary definitions. Preserve attributed lexical passages in the new KB.
     structured = any(meta.get("evidence") for meta in results["metadatas"][0])
     compressed = (
-        context[:4000]
+        context
         if structured
         else ContextCompressor().compress(query=body.query, context=context)
     )
@@ -265,6 +292,18 @@ def ask(
         "mode": results["mode"],
         "answer": answer,
         "context_preview": compressed,
+        "warnings": (
+            [
+                "Some retrieved book or candidate evidence is unreviewed. Check its source before relying on spellings, meanings or naming rules."
+            ]
+            if any(
+                meta.get("text_status") in {"ocr_unreviewed", "assistant_transcription"}
+                or meta.get("kind")
+                in {"grammar", "deity_candidate", "naming_candidate"}
+                for meta in results["metadatas"][0]
+            )
+            else []
+        ),
         "sources": [
             {"chunk_id": key, "metadata": meta, "score": score}
             for key, meta, score in zip(

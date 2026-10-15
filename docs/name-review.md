@@ -28,7 +28,7 @@ meaning. These are research triage decisions, not human accept/reject labels.
 ## Reproduce a batch
 
 ```bash
-python -m knowledge.build
+python -m knowledge.unified_build
 python -m naming.review prepare --shortlist configs/name_review_shortlist.json --output reports/name_review_next
 ```
 
@@ -36,6 +36,8 @@ The batch embeds the exact lexical records, source observations and a fingerprin
 of the proposals. The generated decision template begins with a blank reviewer,
 no review date, all confirmations false, and every decision pending. A different
 knowledge version or altered evidence requires a fresh batch.
+The original committed batch belongs to the earlier online-only index. Prepare
+a new batch before recording decisions against the unified knowledge base.
 
 ## Record the review
 

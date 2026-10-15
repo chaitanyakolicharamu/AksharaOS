@@ -11,7 +11,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 from knowledge.schema import digest, normalize, write_jsonl
-from knowledge.search import KnowledgeSearch
+from knowledge.unified_search import UnifiedSearch
 from naming.catalog import Catalog, Name
 
 
@@ -236,9 +236,21 @@ def render_report(batch):
         lines += ["", f"## {p['name_te']} / {p['name_en']}", "", p["notes"], ""]
         for r in item["evidence"]:
             for ev in r["evidence"]:
+                page = f", PDF page {ev['pdf_page']}" if ev.get("pdf_page") else ""
+                label = f"{ev['source_id']}{page}"
+                reference = (
+                    f"[{label}]({ev['url']})"
+                    if ev.get("url")
+                    else f"{label} ({ev.get('locator', '')})"
+                )
+                license_label = (
+                    f"[{ev['license']}]({ev['license_url']})"
+                    if ev.get("license_url")
+                    else ev["license"]
+                )
                 lines.append(
-                    f"- [{ev['source_id']}, revision {ev['revision']}]({ev['url']})"
-                    f" — {ev['attribution']}; [{ev['license']}]({ev['license_url']})."
+                    f"- {reference}, revision {ev['revision']}"
+                    f" — {ev['attribution']}; {license_label}."
                 )
             if note := p["observations"].get(r["id"]):
                 lines.append(f"  Source observation (AI paraphrase): {note}")
@@ -259,7 +271,9 @@ def render_report(batch):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--knowledge", type=Path, default=Path("data/knowledge/index"))
+    parser.add_argument(
+        "--knowledge", type=Path, default=Path("data/knowledge/unified")
+    )
     commands = parser.add_subparsers(dest="command", required=True)
     build = commands.add_parser("prepare")
     build.add_argument("--shortlist", type=Path, required=True)
@@ -269,7 +283,7 @@ def main():
     compile_.add_argument("--decisions", type=Path, required=True)
     compile_.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    knowledge = KnowledgeSearch(args.knowledge)
+    knowledge = UnifiedSearch(args.knowledge)
     if args.command == "prepare":
         batch = prepare(
             json.loads(args.shortlist.read_text(encoding="utf-8")), knowledge

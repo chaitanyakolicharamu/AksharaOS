@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from knowledge.search import KnowledgeSearch
+from knowledge.unified_search import UnifiedSearch
 
 
 def evaluate(index, cases):
@@ -37,14 +37,14 @@ def evaluate(index, cases):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--index", type=Path, default=Path("data/knowledge/index"))
+    parser.add_argument("--index", type=Path, default=Path("data/knowledge/unified"))
     parser.add_argument(
         "--cases", type=Path, default=Path("configs/knowledge_eval.json")
     )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     result = evaluate(
-        KnowledgeSearch(args.index), json.loads(args.cases.read_text(encoding="utf-8"))
+        UnifiedSearch(args.index), json.loads(args.cases.read_text(encoding="utf-8"))
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
