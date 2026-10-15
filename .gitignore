@@ -4,3 +4,12 @@ __pycache__/
 .env
 *.pyc
 .DS_Store
+.venv/
+.pytest_cache/
+.ruff_cache/
+data/private/
+data/knowledge/index/
+data/knowledge/unified/
+models/
+*.sqlite3-wal
+*.sqlite3-shm

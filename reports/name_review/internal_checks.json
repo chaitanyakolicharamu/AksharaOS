@@ -1,0 +1,122 @@
+{
+  "checked_at": "2026-10-13T05:56:46.240314+00:00",
+  "knowledge_version": "21687861b415a178c114",
+  "review_batch": "39383a2b59500143c3f3",
+  "human_approved_names": 0,
+  "public_deployment": false,
+  "scope": "Internal API smoke checks on the committed 825-record corpus; not a held-out name-quality benchmark. No real feedback or preference training was created.",
+  "checks": [
+    {
+      "check": "API liveness",
+      "passed": true,
+      "details": {
+        "status": "healthy",
+        "service": "AksharaOS"
+      }
+    },
+    {
+      "check": "Real knowledge loaded; names still pending",
+      "passed": true,
+      "details": {
+        "knowledge_version": "21687861b415a178c114",
+        "knowledge_records": 825,
+        "catalog_version": "4f53cda18c2baa0c0354",
+        "reviewed_names": 0,
+        "ranker_version": "baseline-v1",
+        "public_launch_ready": false,
+        "stage": "internal testing"
+      }
+    },
+    {
+      "check": "Search moonlight",
+      "passed": true,
+      "details": {
+        "expected_title": "వెన్నెల",
+        "returned_titles": [
+          "వెన్నెల",
+          "జ్యోత్స్న",
+          "చంద్రిక",
+          "వెన్నెల",
+          "చంద్రిక"
+        ]
+      }
+    },
+    {
+      "check": "Search star",
+      "passed": true,
+      "details": {
+        "expected_title": "తార",
+        "returned_titles": [
+          "నక్షత్రము",
+          "ధ్రువనక్షత్రము",
+          "సూర్యుడు",
+          "తార",
+          "చుక్క"
+        ]
+      }
+    },
+    {
+      "check": "Search కలువ",
+      "passed": true,
+      "details": {
+        "expected_title": "కలువ",
+        "returned_titles": [
+          "కలువ",
+          "కలువ"
+        ]
+      }
+    },
+    {
+      "check": "Pending names cannot be served",
+      "passed": true,
+      "details": {
+        "results": [],
+        "impression_id": null,
+        "status": "no_reviewed_matches",
+        "message": "No reviewed names match yet. Dictionary words require name and meaning review.",
+        "catalog_version": "4f53cda18c2baa0c0354",
+        "knowledge_version": "21687861b415a178c114"
+      }
+    },
+    {
+      "check": "Name intent Telugu girl name with moonlight meaning",
+      "passed": true,
+      "details": {
+        "query": "Telugu girl name with moonlight meaning",
+        "mode": "name",
+        "results": [],
+        "impression_id": null,
+        "status": "no_reviewed_matches",
+        "message": "No reviewed names match yet. Dictionary words require name and meaning review.",
+        "catalog_version": "4f53cda18c2baa0c0354",
+        "knowledge_version": "21687861b415a178c114"
+      }
+    },
+    {
+      "check": "Name intent అమ్మాయి పేరు",
+      "passed": true,
+      "details": {
+        "query": "అమ్మాయి పేరు",
+        "mode": "name",
+        "results": [],
+        "impression_id": null,
+        "status": "no_reviewed_matches",
+        "message": "No reviewed names match yet. Dictionary words require name and meaning review.",
+        "catalog_version": "4f53cda18c2baa0c0354",
+        "knowledge_version": "21687861b415a178c114"
+      }
+    },
+    {
+      "check": "No feedback without a real impression/session",
+      "passed": true,
+      "details": {
+        "detail": "First request a name suggestion in this session"
+      }
+    },
+    {
+      "check": "Pending review template cannot compile",
+      "passed": true,
+      "details": "No human-approved names; no catalog will be written"
+    }
+  ]
+}

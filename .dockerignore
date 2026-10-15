@@ -8,3 +8,12 @@ reports/
 data/interim/
 data/processed/
 *.pyc
+.venv
+.pytest_cache
+.ruff_cache
+data/private
+data/knowledge/index
+data/knowledge/unified
+models
+.env
+.env.*

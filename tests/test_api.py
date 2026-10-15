@@ -1,19 +1,12 @@
-from fastapi.testclient import TestClient
-
-from api.main import app
-
-client = TestClient(app)
-
-
-def test_health_endpoint():
-    response = client.get("/health")
+def test_health_endpoint(api_client):
+    response = api_client.get("/health")
 
     assert response.status_code == 200
     assert response.json()["status"] == "healthy"
 
 
-def test_search_endpoint():
-    response = client.post(
+def test_search_endpoint(api_client):
+    response = api_client.post(
         "/search",
         json={
             "query": "ఆకాశము",

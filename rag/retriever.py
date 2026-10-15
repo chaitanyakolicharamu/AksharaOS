@@ -1,3 +1,5 @@
+import os
+
 from sentence_transformers import SentenceTransformer
 from rag.reranker import Reranker
 from rag.query_router import QueryRouter
@@ -14,21 +16,12 @@ class Retriever:
         self.reranker = Reranker()
         self.query_router = QueryRouter()
         self.vector_store = VectorStore(
-            path=VECTOR_DB_DIR,
+            path=os.getenv("AKSHARA_VECTOR_DB", VECTOR_DB_DIR),
             collection_name=COLLECTION_NAME,
         )
 
     def detect_mode(self, query: str) -> str:
-        pure_telugu_terms = ["అచ్చ", "అచ్చతెలుగు", "తెలుగు మాట", "సాటి మాట"]
-        name_terms = ["పేర్లు", "పేరు", "అమ్మాయిల", "అబ్బాయిల"]
-
-        if any(term in query for term in pure_telugu_terms):
-            return "pure_telugu"
-
-        if any(term in query for term in name_terms):
-            return "name"
-
-        return "synonym"
+        return self.query_router.detect_mode(query)
 
     def exact_search(self, query: str, top_k: int = 5):
         return self.vector_store.exact_search(query=query, top_k=top_k)

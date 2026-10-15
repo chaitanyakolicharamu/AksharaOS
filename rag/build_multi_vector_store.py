@@ -1,97 +1,92 @@
-from pathlib import Path
-import json
-import shutil
+"""Build a combined Chroma index in a NEW directory, preserving the active index."""
 
-import chromadb
-from sentence_transformers import SentenceTransformer
+import argparse
+import json
+from pathlib import Path
+import re
+
+from ingestion.config import load_config
 
 CURATED_DIR = Path("data/curated")
-VECTOR_DB_DIR = "data/curated/vector_store"
+VECTOR_DB_DIR = "data/curated/vector_store_next"
 COLLECTION_NAME = "bangaru_palukulu_knowledge"
-
 EMBEDDING_MODEL = "BAAI/bge-m3"
 
-SOURCE_ROLES = {
-    "bangaru_nanelu": "pure_telugu_reference",
-    "telugu_paryaya_nighantuvu": "synonym_dictionary",
-}
 
-
-def load_all_chunks():
-    ids = []
-    documents = []
-    metadatas = []
-
-    files = sorted(CURATED_DIR.glob("*/quality_chunks.jsonl"))
-
+def load_all_chunks(curated_dir=CURATED_DIR, knowledge_index=None):
+    roles = {key: config.source_role for key, config in load_config().documents.items()}
+    files = sorted(Path(curated_dir).glob("*/quality_chunks.jsonl"))
+    if knowledge_index:
+        root = Path(knowledge_index)
+        version = (root / "CURRENT").read_text(encoding="utf-8").strip()
+        if not re.fullmatch(r"[a-f0-9]{20}", version):
+            raise ValueError("Invalid knowledge version")
+        files.append(root / "versions" / version / "quality_chunks.jsonl")
+    ids, documents, metadatas, seen = [], [], [], set()
     for dataset_file in files:
-        document_folder = dataset_file.parent.name
-        source_role = SOURCE_ROLES.get(document_folder, "unknown")
-
-        print(f"[LOAD] Reading: {dataset_file}")
-
-        with open(dataset_file, "r", encoding="utf-8") as file:
-            for line in file:
-                chunk = json.loads(line)
-
-                ids.append(chunk["chunk_id"])
-                documents.append(chunk["text"])
-                metadatas.append(
-                    {
-                        "document_id": chunk.get("document_id", document_folder),
-                        "source_role": source_role,
-                        "unit_type": chunk.get("unit_type", "unknown"),
-                        "unit_id": chunk.get("unit_id", "unknown"),
-                        "language": chunk.get("language", "te"),
-                        "quality_score": chunk.get("quality_score", 0),
-                    }
+        folder = dataset_file.parent.name
+        for line in dataset_file.read_text(encoding="utf-8").splitlines():
+            chunk = json.loads(line)
+            key = chunk["chunk_id"]
+            if key in seen:
+                continue
+            seen.add(key)
+            ids.append(key)
+            documents.append(chunk["text"])
+            metadata = {
+                "document_id": chunk.get("document_id", folder),
+                "source_role": chunk.get("source_role", roles.get(folder, "unknown")),
+                "unit_type": chunk.get("unit_type", "unknown"),
+                "unit_id": chunk.get("unit_id", "unknown"),
+                "language": chunk.get("language", "te"),
+                "quality_score": chunk.get("quality_score", 0) or 0,
+            }
+            if chunk.get("evidence"):
+                # Chroma metadata values must be scalar. Keep all citations in JSON.
+                metadata["evidence_json"] = json.dumps(
+                    chunk["evidence"], ensure_ascii=False
                 )
-
+            metadatas.append(metadata)
     return ids, documents, metadatas
 
 
 def main():
-    print("[RESET] Removing old vector store...")
-    shutil.rmtree(VECTOR_DB_DIR, ignore_errors=True)
-
-    print("[LOAD] Loading embedding model...")
-    model = SentenceTransformer(EMBEDDING_MODEL)
-
-    ids, documents, metadatas = load_all_chunks()
-
-    print(f"[DATA] Total chunks loaded: {len(documents)}")
-
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=Path(VECTOR_DB_DIR))
+    parser.add_argument("--knowledge-index", type=Path)
+    args = parser.parse_args()
+    if args.output.exists():
+        parser.error(
+            "Output already exists. Choose a new directory; the active store is never deleted."
+        )
+    ids, documents, metadatas = load_all_chunks(knowledge_index=args.knowledge_index)
     if not documents:
-        print("[STOP] No chunks found.")
-        return
+        parser.error("No chunks found")
+    import chromadb
+    from sentence_transformers import SentenceTransformer
 
-    print("[DB] Creating ChromaDB collection...")
-    client = chromadb.PersistentClient(path=VECTOR_DB_DIR)
-
-    collection = client.get_or_create_collection(
-        name=COLLECTION_NAME,
-        metadata={"description": "Bangaru Palukulu multi-source Telugu knowledge base"},
+    model = SentenceTransformer(EMBEDDING_MODEL)
+    client = chromadb.PersistentClient(path=str(args.output))
+    collection = client.get_or_create_collection(name=COLLECTION_NAME)
+    for offset in range(0, len(ids), 128):
+        texts = documents[offset : offset + 128]
+        embeddings = model.encode(texts, batch_size=16, normalize_embeddings=True)
+        collection.add(
+            ids=ids[offset : offset + 128],
+            documents=texts,
+            metadatas=metadatas[offset : offset + 128],
+            embeddings=embeddings.tolist(),
+        )
+    print(
+        json.dumps(
+            {
+                "chunks": collection.count(),
+                "output": str(args.output),
+                "activation": "Set AKSHARA_VECTOR_DB to this path after evaluating the new index.",
+            },
+            indent=2,
+        )
     )
-
-    print("[EMBED] Creating embeddings...")
-    embeddings = model.encode(
-        documents,
-        batch_size=16,
-        show_progress_bar=True,
-        normalize_embeddings=True,
-    )
-
-    print("[DB] Saving vectors...")
-    collection.add(
-        ids=ids,
-        documents=documents,
-        metadatas=metadatas,
-        embeddings=embeddings.tolist(),
-    )
-
-    print("[DONE] Multi-source vector store created.")
-    print(f"[PATH] {VECTOR_DB_DIR}")
-    print(f"[COLLECTION] {COLLECTION_NAME}")
 
 
 if __name__ == "__main__":

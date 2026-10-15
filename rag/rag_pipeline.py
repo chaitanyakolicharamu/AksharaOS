@@ -1,11 +1,11 @@
-from rag.retriever import Retriever
+from knowledge.unified_search import UnifiedSearch
 from rag.context_builder import ContextBuilder
 from rag.generator import Generator
 
 
 class RAGPipeline:
     def __init__(self):
-        self.retriever = Retriever()
+        self.retriever = UnifiedSearch()
         self.context_builder = ContextBuilder()
         self.generator = Generator()
 

@@ -1,0 +1,174 @@
+{
+  "version": "5c01f4822c368d060fa6",
+  "schema_version": "unified-v1",
+  "corpus_sha256": "98349c826c92bdeb5beec6a98899d4c69dd5122b5a65b6555f0b73b1e179a75a",
+  "records": 6102,
+  "sources": [
+    {
+      "source_id": "balavyakaranam_1911",
+      "title": "Bala Vyakaranamu, Chinnaya Suri, 1911 edition",
+      "role": "Telugu grammar: sandhi, tatsama, native forms, compounds",
+      "status": "included",
+      "reuse_status": "The host marks the historical work public domain. Retain CC-BY-SA-4.0 attribution for the transcription and edits.",
+      "citation_count": 115,
+      "record_count": 115
+    },
+    {
+      "source_id": "bangaru_nanelu",
+      "title": "Bangaru Nanelu",
+      "role": "pure_telugu_reference",
+      "status": "included",
+      "reuse_status": "not established from supplied copy",
+      "citation_count": 2052,
+      "record_count": 2052
+    },
+    {
+      "source_id": "en_wiktionary_te",
+      "title": "English Wiktionary — Telugu entries",
+      "role": "lexical_reference",
+      "status": "included",
+      "reuse_status": "CC-BY-SA-4.0",
+      "citation_count": 458,
+      "record_count": 458
+    },
+    {
+      "source_id": "gouru_pedda_bala_siksha",
+      "title": "Gouru Pedda Bala Siksha",
+      "role": "book_reference",
+      "status": "included",
+      "reuse_status": "Publisher rights reserved on PDF page 3; reuse permission not established",
+      "source_sha256": "ed6b2805bfd35962cb278ea3b1ecee87169359f25a84c9ceb448121d4df51129",
+      "pages": 209,
+      "citation_count": 317,
+      "record_count": 317
+    },
+    {
+      "source_id": "lakshmi_ashtottara",
+      "title": "Sri Lakshmi Ashtottara Shatanamavali",
+      "role": "Lakshmi association research; quality-hold example",
+      "status": "quarantined",
+      "reuse_status": "Page transcription offered under CC-BY-SA-4.0.",
+      "citation_count": 0,
+      "record_count": 0
+    },
+    {
+      "source_id": "pedda_bala_siksha",
+      "title": "Pedda Bala Siksha",
+      "role": "book_reference",
+      "status": "included",
+      "reuse_status": "Not established from supplied copy",
+      "source_sha256": "3d96531886c8949272b5cd91ef3feb53ab853528212bc182ae39fcc7e837aedb",
+      "pages": 116,
+      "citation_count": 229,
+      "record_count": 229
+    },
+    {
+      "source_id": "saraswati_dvadasha",
+      "title": "Sri Saraswati Dvadasha Nama Stotram",
+      "role": "Candidate name-to-Saraswati associations",
+      "status": "included",
+      "reuse_status": "Page transcription offered under CC-BY-SA-4.0.",
+      "citation_count": 8,
+      "record_count": 8
+    },
+    {
+      "source_id": "te_wiktionary",
+      "title": "Telugu Wiktionary",
+      "role": "lexical_reference",
+      "status": "included",
+      "reuse_status": "CC-BY-SA-4.0",
+      "citation_count": 283,
+      "record_count": 283
+    },
+    {
+      "source_id": "telugu_bhasha_charitra",
+      "title": "Telugu Bhasha Charitra",
+      "role": "book_reference",
+      "status": "included",
+      "reuse_status": "Not established from supplied copy",
+      "source_sha256": "4c47e802bb90b6527f03cf7f57c87738b8dbd4b597ff19c53372cf02fd9fbfc1",
+      "pages": 532,
+      "citation_count": 959,
+      "record_count": 958
+    },
+    {
+      "source_id": "telugu_english_dictionary",
+      "title": "Telugu–English dictionary",
+      "role": "meaning_dictionary",
+      "status": "awaiting_extraction",
+      "reuse_status": "not established from supplied copy",
+      "citation_count": 0,
+      "record_count": 0
+    },
+    {
+      "source_id": "telugu_paryaya_nighantuvu",
+      "title": "Telugu Paryaya Nighantuvu",
+      "role": "synonym_dictionary",
+      "status": "included",
+      "reuse_status": "not established from supplied copy",
+      "citation_count": 1590,
+      "record_count": 1590
+    },
+    {
+      "source_id": "vishnu_sahasranama",
+      "title": "Vishnu Sahasranama Stotram",
+      "role": "Candidate Vishnu epithets and evidence for devotional naming",
+      "status": "included",
+      "reuse_status": "Page transcription offered under CC-BY-SA-4.0; distinguish the ancient text from modern explanatory material.",
+      "citation_count": 8,
+      "record_count": 8
+    },
+    {
+      "source_id": "wikidata_te",
+      "title": "Wikidata Telugu lexemes",
+      "role": "lexical_reference",
+      "status": "included",
+      "reuse_status": "CC0-1.0",
+      "citation_count": 84,
+      "record_count": 84
+    }
+  ],
+  "included_source_count": 11,
+  "source_evidence_counts": {
+    "balavyakaranam_1911": 115,
+    "bangaru_nanelu": 2052,
+    "en_wiktionary_te": 458,
+    "gouru_pedda_bala_siksha": 317,
+    "pedda_bala_siksha": 229,
+    "saraswati_dvadasha": 8,
+    "te_wiktionary": 283,
+    "telugu_bhasha_charitra": 959,
+    "telugu_paryaya_nighantuvu": 1590,
+    "vishnu_sahasranama": 8,
+    "wikidata_te": 84
+  },
+  "book_pages_processed": 857,
+  "quarantined_items": 14,
+  "text_status_counts": {
+    "ocr_unreviewed": 5100,
+    "source_text": 956,
+    "assistant_transcription": 46
+  },
+  "kind_counts": {
+    "passage": 5100,
+    "lexical": 825,
+    "grammar": 127,
+    "deity_candidate": 22,
+    "naming_candidate": 28
+  },
+  "reviewed_records": 0,
+  "retrieval": "word + character TF-IDF over one canonical corpus",
+  "dense_embeddings_built": false,
+  "model_fine_tuned": false,
+  "training_allowed_records": 0,
+  "public_launch_ready": false,
+  "build_config_sha256": "e32d1af630b286ca394ab2ed470464b49080b0763a03e67b173c088b14a7e821",
+  "book_inputs_present": true,
+  "research_inputs_present": true,
+  "index_sha256": {
+    "vectors.npz": "fbba59cd928267bbc8ef1de69ed276d23dbe8005c68e2f359a47e12186583630",
+    "vectorizer.json": "cb633e8e95ac43f32a7cbb827e0a3374cf8329d00d97d6a7d0789659bf51fc9d",
+    "word_vectors.npz": "d8c41f6bcc42f9a7babaebf612daa116eeeb1892eb68843ea190d4f5e04a5485",
+    "word_vectorizer.json": "efab64951215913d26e6bd3ecf830a40004d17d4d7b7ae1c75a1db4a9f30cf3e"
+  }
+}

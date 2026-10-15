@@ -1,11 +1,11 @@
-from rag.retriever import Retriever
+from knowledge.unified_search import UnifiedSearch
 from rag.context_builder import ContextBuilder
 
 
 def main():
     query = input("Question: ")
 
-    retriever = Retriever()
+    retriever = UnifiedSearch()
     results = retriever.retrieve(query=query, top_k=5)
 
     documents = results["documents"][0]
@@ -21,10 +21,12 @@ def main():
         print("\n" + "-" * 100)
         print(f"Rank: {i}")
         print(f"Chunk ID: {chunk_id}")
-        print(f"Document: {meta.get('document_id')}")
-        print(f"Source Role: {meta.get('source_role')}")
-        print(f"Unit: {meta.get('unit_id')}")
-        print(f"Quality Score: {meta.get('quality_score')}")
+        print(f"Knowledge version: {meta.get('knowledge_version')}")
+        print(f"Review status: {meta.get('review_status')} / {meta.get('text_status')}")
+        for evidence in meta.get("evidence", []):
+            print(
+                f"Source: {evidence.get('source_title')} | PDF page: {evidence.get('pdf_page')} | {evidence.get('url') or evidence.get('locator')}"
+            )
         print("-" * 100)
         print(doc[:1000])
 

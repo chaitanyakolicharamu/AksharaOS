@@ -1,0 +1,111 @@
+[
+  {
+    "name_te": "వెన్నెల",
+    "name_en": "Vennela",
+    "meaning": "Moonlight (చంద్రుని వెలుగు)",
+    "gender": "girl",
+    "origin": "telugu",
+    "status": "established",
+    "flags": [],
+    "notes": "Proposed first pilot candidate. The English Wiktionary entry explicitly records Telugu female given-name usage and derives the word from Telugu elements for light and moon. Human confirmation of spelling, meaning and suitability is still required.",
+    "observations": {
+      "968286f89b5e9154dbe23a4c": "Lists moonlight, a Telugu compound derivation, and female given-name usage. The original lexical importer retained only the meaning; the full linked revision supplies the additional naming evidence.",
+      "9fdde2bfcc41cca75877636a": "Describes the light coming from the moon."
+    }
+  },
+  {
+    "name_te": "తార",
+    "name_en": "Tara",
+    "meaning": "Star (నక్షత్రం)",
+    "gender": "girl",
+    "origin": "sanskrit",
+    "status": "established",
+    "flags": ["multiple_senses"],
+    "notes": "Proposed first pilot candidate for general Telugu naming, excluded from pure-Telugu-origin results. Keep the intended star meaning separate from the entry's eye-pupil and mythological-person senses. The source explicitly records a female given name from Sanskrit.",
+    "observations": {
+      "2d7b50f7a678ace18f1925d2": "Lists star and other senses, Sanskrit derivation, and female given-name usage.",
+      "0344176558fa80fb005bb94f": "Also gives the star meaning alongside mythological and anatomical senses."
+    }
+  },
+  {
+    "name_te": "దీప్తి",
+    "name_en": "Deepthi",
+    "meaning": "Radiance; brightness (కాంతి, ప్రకాశం)",
+    "gender": "girl",
+    "origin": "sanskrit",
+    "status": "established",
+    "flags": ["single_source", "romanized_spelling_choice"],
+    "notes": "Proposed first pilot candidate for general Telugu naming, excluded from pure-Telugu-origin results. Telugu Wiktionary explicitly describes a woman's name and marks the word as Sanskrit-derived. Confirm whether the pilot spelling should be Deepthi or Deepti; the Telugu spelling is దీప్తి.",
+    "observations": {
+      "ab71ecf7fe9e4f6ae20b4a37": "The full revision identifies women's-name usage and Sanskrit origin; its meaning section gives light and radiance."
+    }
+  },
+  {
+    "name_te": "సిరి",
+    "name_en": "Siri",
+    "meaning": "Wealth; prosperity (సంపద)",
+    "gender": null,
+    "origin": "unknown",
+    "status": null,
+    "flags": ["origin_unverified", "name_usage_needs_confirmation"],
+    "notes": "The wealth/prosperity meaning is supported. The checked entry also calls it a name of Lakshmi, but does not establish its etymology or a modern given-name classification. Do not infer native Telugu origin merely from Telugu script or from a synonym.",
+    "observations": {
+      "e12674017ff128752264ef41": "Gives prosperity and wealth, with a divine-name sense; no etymology section was present when checked.",
+      "5ad79393d8b4b415362718a7": "Supports the wealth meaning."
+    }
+  },
+  {
+    "name_te": "లహరి",
+    "name_en": "Lahari",
+    "meaning": "Wave (అల)",
+    "gender": null,
+    "origin": "unknown",
+    "status": null,
+    "flags": ["single_source", "origin_unverified", "name_usage_needs_confirmation"],
+    "notes": "The source supports a wave meaning, but its etymology field is empty and it does not explicitly describe naming usage. Keep origin and gender unresolved until review.",
+    "observations": {
+      "6bae3a73649d5b7ea808caf3": "The meaning section points to wave; the English gloss specifies a large wave."
+    }
+  },
+  {
+    "name_te": "కాంతి",
+    "name_en": "Kanti",
+    "meaning": "Light; brilliance (వెలుగు)",
+    "gender": null,
+    "origin": "unknown",
+    "status": null,
+    "flags": ["single_source", "origin_unverified", "name_usage_needs_confirmation"],
+    "notes": "The saved revision supports the lexical meaning. Full-page verification could not be completed in this review, so origin and given-name usage are left unresolved.",
+    "observations": {
+      "884b7d5ad2011895d829f7bd": "The committed source snapshot gives light and brilliance."
+    }
+  },
+  {
+    "name_te": "కలువ",
+    "name_en": "Kaluva",
+    "meaning": "Water lily (కలువ పువ్వు)",
+    "gender": null,
+    "origin": "unknown",
+    "status": null,
+    "flags": ["origin_unverified", "name_usage_needs_confirmation", "botanical_translation"],
+    "notes": "The Telugu source gives water lily; the English entry broadens this to water lily or lotus. Prefer the supported water-lily gloss without claiming a botanical species. Suitability as an established or coined personal name still needs review.",
+    "observations": {
+      "214c4377552e80edc3acf3c3": "Gives water lily or lotus without an etymology or a given-name entry.",
+      "56ad8e735b6fe58e91875579": "Gives the water-lily meaning."
+    }
+  },
+  {
+    "name_te": "తామర",
+    "name_en": "Taamara",
+    "meaning": "Lotus (తామర పువ్వు), intended floral sense only",
+    "gender": null,
+    "origin": "unknown",
+    "status": null,
+    "flags": ["unfavorable_alternate_meaning", "origin_unverified", "name_usage_needs_confirmation"],
+    "notes": "Hold from the first pilot. Both dictionaries also record a skin-condition sense. The English entry specifically gives ringworm. Human judgment is needed before using it as a baby-name suggestion. Its Tamil cognate alone is not treated as proof for the pure-Telugu-origin filter.",
+    "observations": {
+      "72bba32ecbeaff793d9a76a3": "Lists lotus and ringworm as separate senses; notes a Tamil cognate.",
+      "182091f406022745584524ff": "Also mixes floral and skin-condition senses, requiring explicit sense selection."
+    }
+  }
+]
